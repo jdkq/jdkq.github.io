@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<title></title>
+		<!-- 自定义两组样式控制transition 内部元素实现过渡动画 -->
+		<style type="text/css">
+			/* v-enter 进入前，元素起始状态 [时间点]*/
+			.v-enter,
+			/* v-leave-to 离开之后时间点*/
+			.v-leave-to{
+				opacity: 0;
+				transform: translate(200px);
+			}
+			/* v-enter-active [入场动画时间段]*/
+			/* v-leave-active [离场动画时间段]*/
+			.v-enter-active,
+			.v-leave-active{
+				transition: all 0.4s ease;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p>需求: 使用过度类名实现动画点击h3显示，再点击隐藏</p>
+			<input type="button" name="" value="toggle" @click="flag=!flag">
+			<!-- 使用transtion 元素把需要的被动画控制的元素 -->
+			<transition>
+				<h3 v-if="flag">这是一个h3</h3>
+			</transition>
+			<hr>
+			<input type="button" name="" value="toggle2" @click="flag2=!flag2">
+			<!-- 使用transtion 元素把需要的被动画控制的元素 -->
+			<transition>
+				<h6 v-if="flag">这是一个h6</h6>
+			</transition>
+			
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					flag: false,
+					flag2: false
+				},
+				methods:{},
+			})
+		</script>
+	</body>
+</html>

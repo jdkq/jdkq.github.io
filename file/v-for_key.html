@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+</head>
+<body>
+<div id="app">
+	<div>
+		<label>ID:<input v-model="id"></input></label><br>
+		<label>Name:<input v-model="name"></input></label><br>
+		<input type="button" value="添加" @click="add">
+	</div>
+	<!-- 注意：v-for 循环的时候，key 属性只能使用number 或取string -->
+	<!-- 注意： key在使用的时候必须用v-bind绑定属性指定key值 -->
+	<!-- 在组件中使用v-for循环时，或者在特定情况中，如果v-for有问题，必须在使用v-for的同时，指定唯一的字符串/数字，类型：key值 -->
+	<p v-for="item in list" :key="item">
+		<input type="checkbox">{{item.id}} ----
+		{{item.name}}
+	</p>
+</div>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			id:'',
+			name:'',
+			list:[
+				{id: 1,name: '里斯'},
+				{id: 2,name: '凯'},
+				{id: 3,name: '二哈'},
+				{id: 4,name: '小孩'}
+			]
+		},
+		methods:{
+			add: function(){
+				if (this.id!=null && this.name!=null) {
+					this.list.push({id:this.id,name: this.name})
+				}
+				else{
+					alert('添加为空或添加失败')
+				}
+			}
+		}
+	})
+</script>
+</body>
+</html>

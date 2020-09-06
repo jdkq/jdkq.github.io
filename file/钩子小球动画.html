@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			body{
+				color: #fff;
+				background-color: #000
+			}
+			.ball{
+				width: 15px;
+				height: 15px;
+				background-color: red;
+				border-radius: 50%
+			}
+			input[type="button"]:hover{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="快到碗里来" name="" @click="flag=!flag">
+			<!-- 使用transtion包裹元素 -->
+			<transition
+				@before-enter="beforeEnter"
+				@enter="enter"
+				@after-enter="afterEnter">
+				<div class="ball" v-show="flag"></div>
+			</transition>
+			<span style="position: absolute;left: 120px;top: 500px">“形象”的碗</span>
+			
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					flag: false
+				},
+				methods:{
+					// el:表示要执行动画的那个元素是个原生的js DOM对象
+					// el是通过 document.getElmentById('') 获取的DOM对象
+					beforeEnter:function (el) {
+						// 表示动画入场之前，此时动画尚未开始，可以在beforeEnter 中设置动画开始之前的其实样式
+						// 设置小球起始位置
+						el.style.transform = "translate(0,0)"
+					},
+					enter: function (el,done){
+						// 这句话没有实际作用，如果不写没有实际效果
+						// 可以el.offsetWidth会强制浏览器刷新
+						el.offsetWidth
+						// 表示动画开始之后的样式，这里可以设置小球完成动画的结束状态
+						el.style.transform = "translate(150px,450px)"
+						el.style.transition = "all 1s ease"
+
+						// 这里的回调done函数 ，其实就是 afterEnter 这个函数，也就是说done是afterEnter的引用
+						done()
+					},
+					afterEnter: function (el){
+						// 动画完成之后
+						// 这句话 ：第一个功能：控制小球的显示与隐藏
+						// 第二个功能： 直接跳过后半场动画，让flag 变成false
+						// 当第二次点击， flag:false -> true
+						this.flag = !this.flag
+						// el.style.opacity=0
+
+						// Vue 把一个完整的动画使用钩子函数拆分成了两部分
+						// 我们使用 flag 标识符表示动画的切换
+
+						// flag = flase -> true ->false
+					}
+				},
+			})
+		</script>
+	</body>
+</html>

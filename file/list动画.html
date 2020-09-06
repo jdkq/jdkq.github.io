@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			ul{
+				padding: 0
+			}
+			li{
+				width: 100%;
+				list-style-type: none;
+				border: 1px dashed #999;
+				padding: 8px;
+				line-height: 35px;
+
+			}
+			li:hover{
+				background-color: pink;
+				transition: all 0.4s ease
+			}
+			.v-enter,
+			.v-leave-to{
+				opacity: 0;
+				transform: translateY(80px);
+			}
+			.v-enter-active,
+			.v-leave-active{
+				transition: all 0.8s ease
+			}
+			/*
+				下面的.move 和 .v-leave-active 配合使用，能够实现列表后续的元素，渐渐的飘上来的效果
+			*/
+			.v-move{
+				transition: all 0.8s ease
+			}
+			.v-leave-active{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<label>
+					ID:
+					<input type="text" name="" v-model="id">
+				</label>
+				<label>
+					Name:
+					<input type="text" name="" v-model="name">
+				</label>
+				<input type="button" name="" value="添加" @click="add">
+			</div>
+				<!-- 在实现列表过度的时候，如果需要过度元素，是通过v-for 循环渲染出来的，需要用transition包裹 所以使用transitionGroup -->
+				<!-- 如果要给 v-for 循环创建元素动画，必须为每一个元素设置:key -->
+				<p>奸臣一表：【点击删除】</p>
+				<transition-group appear tag="ul">
+					<li v-for="item in list" :key="item.id" @click="del(item.id)">
+						{{item.id}} ---- {{item.name}}
+					</li>
+				</transition-group>
+				
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					id: '',
+					name: '',
+					list:[
+						{id:1,name:'赵高'},
+						{id:2,name:'魏忠贤'},
+						{id:3,name:'脑补不出来'},
+						{id:4,name:'你们来吧'}
+					]
+				},
+				methods:{
+					add: function(){
+						this.list.push({id:this.id,name:this.name})
+						this.id = this.name =''
+					},
+					del:function(id){
+						var index = this.list.findIndex(item=>{
+							if (item.id == id) {
+								//在数组的some方法中,如果return true,就会立刻终止这个数组循环
+								return true
+							}
+						})
+						this.list.splice(index,1)
+						}
+				},
+			})
+		</script>
+	</body>
+</html>

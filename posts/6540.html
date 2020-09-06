@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>element—-ui的安装使用 | Dong's Blog</title><meta name="description" content="基于webpack的element-ui组件 &amp;&amp; vue  搭建开发环境  1.安装webpack1npm install -g webpack  2.安装vue-clivue-cli： 是vue.js的脚手架，用于自动生成vue.js模板工程 使用步骤：   安装vue-cli  1npm install -g vue-cli   使用vue-cli构建项目  1vue in"><meta name="keywords" content="elementui"><meta name="author" content="隔壁阿哲"><meta name="copyright" content="隔壁阿哲"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://asdsa.top/posts/6540.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="element—-ui的安装使用"><meta property="og:url" content="https://asdsa.top/posts/6540.html"><meta property="og:site_name" content="Dong's Blog"><meta property="og:description" content="基于webpack的element-ui组件 &amp;&amp; vue  搭建开发环境  1.安装webpack1npm install -g webpack  2.安装vue-clivue-cli： 是vue.js的脚手架，用于自动生成vue.js模板工程 使用步骤：   安装vue-cli  1npm install -g vue-cli   使用vue-cli构建项目  1vue in"><meta property="og:image" content="https://element.eleme.cn/static/resource.a72b8f8.png"><meta property="article:published_time" content="2020-09-06T15:52:00.000Z"><meta property="article:modified_time" content="2020-09-06T16:54:22.914Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"还有","messageNext":"天, 这篇文章内容就过期了"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '天',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#000000","bgDark":"#121212","position":"top-right"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-09-07 00:54:22'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><script src="/js/sakura.js"></script><meta name="generator" content="Hexo 5.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 个人简介</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/file/pl.html"><i class="fa-fw fas fa-file-code"></i><span> 评论列表</span></a></li><li><a class="site-page" href="/file/list_vue.html"><i class="fa-fw fas fa-file-code"></i><span> 品牌列表案例</span></a></li><li><a class="site-page" href="/file/c3card.html"><i class="fa-fw fas fa-file-code"></i><span> CSSCard</span></a></li><li><a class="site-page" href="/file/vue_excel.html"><i class="fa-fw fas fa-file-code"></i><span> Excel转Word</span></a></li><li><a class="site-page" href="/file/calculator.html"><i class="fa-fw fas fa-file-code"></i><span> 简易计算器</span></a></li><li><a class="site-page" href="/snake/index.html"><i class="fa-fw fas fa-file-code"></i><span> JS项目：贪吃蛇</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">搭建开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85webpack"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85vue-cli"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装vue-cli</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85element-ui"><span class="toc-number">2.</span> <span class="toc-text">安装element-ui</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">开始使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">2.2.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#npm-run-dev-%E5%90%8E%E7%9A%84%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">npm run dev 后的效果图</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(http://p1.qhimg.com/bdr/__85/t01f2397475af482659.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Dong's Blog</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 个人简介</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 项目</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/file/pl.html"><i class="fa-fw fas fa-file-code"></i><span> 评论列表</span></a></li><li><a class="site-page" href="/file/list_vue.html"><i class="fa-fw fas fa-file-code"></i><span> 品牌列表案例</span></a></li><li><a class="site-page" href="/file/c3card.html"><i class="fa-fw fas fa-file-code"></i><span> CSSCard</span></a></li><li><a class="site-page" href="/file/vue_excel.html"><i class="fa-fw fas fa-file-code"></i><span> Excel转Word</span></a></li><li><a class="site-page" href="/file/calculator.html"><i class="fa-fw fas fa-file-code"></i><span> 简易计算器</span></a></li><li><a class="site-page" href="/snake/index.html"><i class="fa-fw fas fa-file-code"></i><span> JS项目：贪吃蛇</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">element—-ui的安装使用</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-06T15:52:00.000Z" title="发表于 2020-09-06 23:52:00">2020-09-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-06T16:54:22.914Z" title="更新于 2020-09-07 00:54:22">2020-09-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/vue/">vue</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><blockquote>
+<p>基于webpack的element-ui组件 &amp;&amp; vue</p>
+</blockquote>
+<h1 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h1><hr>
+
+<h2 id="1-安装webpack"><a href="#1-安装webpack" class="headerlink" title="1.安装webpack"></a>1.安装webpack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g webpack</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-安装vue-cli"><a href="#2-安装vue-cli" class="headerlink" title="2.安装vue-cli"></a>2.安装vue-cli</h2><p><code>vue-cli</code>： 是vue.js的脚手架，用于自动生成vue.js模板工程</p>
+<p>使用步骤： </p>
+<ul>
+<li>安装vue-cli</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用vue-cli构建项目</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack project-name //创建一个基于webpack模板的名叫project-name的项目</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装项目依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> project-name</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>此时在浏览器打开： <code>localhost:8080</code>就可以看到对应的页面</p>
+<ul>
+<li>但这个时候只能在本地跑，如果在服务器上访问 此时需要执行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装element-ui"><a href="#安装element-ui" class="headerlink" title="安装element-ui"></a>安装element-ui</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui@next -D</span><br></pre></td></tr></table></figure>
+
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><blockquote>
+<p>接下来就可以参照<code>Element-UI</code>的<a target="_blank" rel="noopener" href="http://element.eleme.io/#/component/">官方文档</a>上手开发了</p>
+</blockquote>
+<p><strong>main.js</strong></p>
+<ol>
+<li>完整引入</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在引入 Element 时，可以传入一个全局配置对象。该对象目前支持 size 与 zIndex 字段。size 用于改变组件的默认尺寸，zIndex 设置弹框的初始 z-index（默认值：2000）。按照引入 Element 的方式，具体操作如下：</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Element <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line">Vue.use(Element, &#123; <span class="attr">size</span>: <span class="string">&#x27;small&#x27;</span>, <span class="attr">zIndex</span>: <span class="number">3000</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>按需引入</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 按需求引入</span></span><br><span class="line"> <span class="comment"># 首先，安装 babel-plugin-component</span></span><br><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+
+<p>将 <code>.babelrc</code> 修改成这个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [[&quot;es2015&quot;, &#123; &quot;modules&quot;: false &#125;]],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>npm run dev出现问题 <code>Module build failed: Error: Couldn&#39;t find preset &quot;es2015&quot; relative to directory</code></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Module build failed: Error: Couldn<span class="string">&#x27;t find preset &quot;es2015&quot; relative to</span></span><br><span class="line"><span class="string">directory &quot;C:\\Users\\董\\Desktop\\project-name&quot;</span></span><br><span class="line"><span class="string">    at C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\options\option-manager.js:293:19</span></span><br><span class="line"><span class="string">    at Array.map (&lt;anonymous&gt;)</span></span><br><span class="line"><span class="string">    at OptionManager.resolvePresets (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\options\option-manager.js:275:20)</span></span><br><span class="line"><span class="string">    at OptionManager.mergePresets (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\options\option-manager.js:264:10)</span></span><br><span class="line"><span class="string">    at OptionManager.mergeOptions (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\options\option-manager.js:249:14)</span></span><br><span class="line"><span class="string">    at OptionManager.init (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\options\option-manager.js:368:12)</span></span><br><span class="line"><span class="string">    at File.initOptions (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\index.js:212:65)</span></span><br><span class="line"><span class="string">    at new File (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\file\index.js:135:24)</span></span><br><span class="line"><span class="string">    at Pipeline.transform (C:\Users\董\Desktop\project-name\node_modules\babel-core\lib\transformation\pipeline.js:46:16)</span></span><br><span class="line"><span class="string">    at transpile (C:\Users\董\Desktop\project-name\node_modules\babel-loader\lib\index.js:50:20)</span></span><br><span class="line"><span class="string">    at Object.module.exports (C:\Users\董\Desktop\project-name\node_modules\babel-loader\lib\index.js:173:20)</span></span><br></pre></td></tr></table></figure>
+<p><em>解决方案</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-preset-es2015</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整引入方式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Pagination,</span><br><span class="line">  Dialog,</span><br><span class="line">  Autocomplete,</span><br><span class="line">  Dropdown,</span><br><span class="line">  DropdownMenu,</span><br><span class="line">  DropdownItem,</span><br><span class="line">  Menu,</span><br><span class="line">  Submenu,</span><br><span class="line">  MenuItem,</span><br><span class="line">  MenuItemGroup,</span><br><span class="line">  Input,</span><br><span class="line">  InputNumber,</span><br><span class="line">  Radio,</span><br><span class="line">  RadioGroup,</span><br><span class="line">  RadioButton,</span><br><span class="line">  Checkbox,</span><br><span class="line">  CheckboxButton,</span><br><span class="line">  CheckboxGroup,</span><br><span class="line">  Switch,</span><br><span class="line">  Select,</span><br><span class="line">  Option,</span><br><span class="line">  OptionGroup,</span><br><span class="line">  Button,</span><br><span class="line">  ButtonGroup,</span><br><span class="line">  Table,</span><br><span class="line">  TableColumn,</span><br><span class="line">  DatePicker,</span><br><span class="line">  TimeSelect,</span><br><span class="line">  TimePicker,</span><br><span class="line">  Popover,</span><br><span class="line">  Tooltip,</span><br><span class="line">  Breadcrumb,</span><br><span class="line">  BreadcrumbItem,</span><br><span class="line">  Form,</span><br><span class="line">  FormItem,</span><br><span class="line">  Tabs,</span><br><span class="line">  TabPane,</span><br><span class="line">  Tag,</span><br><span class="line">  Tree,</span><br><span class="line">  Alert,</span><br><span class="line">  Slider,</span><br><span class="line">  Icon,</span><br><span class="line">  Row,</span><br><span class="line">  Col,</span><br><span class="line">  Upload,</span><br><span class="line">  Progress,</span><br><span class="line">  Spinner,</span><br><span class="line">  Badge,</span><br><span class="line">  Card,</span><br><span class="line">  Rate,</span><br><span class="line">  Steps,</span><br><span class="line">  Step,</span><br><span class="line">  Carousel,</span><br><span class="line">  CarouselItem,</span><br><span class="line">  Collapse,</span><br><span class="line">  CollapseItem,</span><br><span class="line">  Cascader,</span><br><span class="line">  ColorPicker,</span><br><span class="line">  Transfer,</span><br><span class="line">  Container,</span><br><span class="line">  Header,</span><br><span class="line">  Aside,</span><br><span class="line">  Main,</span><br><span class="line">  Footer,</span><br><span class="line">  Timeline,</span><br><span class="line">  TimelineItem,</span><br><span class="line">  Link,</span><br><span class="line">  Divider,</span><br><span class="line">  Image,</span><br><span class="line">  Calendar,</span><br><span class="line">  Backtop,</span><br><span class="line">  PageHeader,</span><br><span class="line">  CascaderPanel,</span><br><span class="line">  Loading,</span><br><span class="line">  MessageBox,</span><br><span class="line">  Message,</span><br><span class="line">  Notification</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Pagination);</span><br><span class="line">Vue.use(Dialog);</span><br><span class="line">Vue.use(Autocomplete);</span><br><span class="line">Vue.use(Dropdown);</span><br><span class="line">Vue.use(DropdownMenu);</span><br><span class="line">Vue.use(DropdownItem);</span><br><span class="line">Vue.use(Menu);</span><br><span class="line">Vue.use(Submenu);</span><br><span class="line">Vue.use(MenuItem);</span><br><span class="line">Vue.use(MenuItemGroup);</span><br><span class="line">Vue.use(Input);</span><br><span class="line">Vue.use(InputNumber);</span><br><span class="line">Vue.use(Radio);</span><br><span class="line">Vue.use(RadioGroup);</span><br><span class="line">Vue.use(RadioButton);</span><br><span class="line">Vue.use(Checkbox);</span><br><span class="line">Vue.use(CheckboxButton);</span><br><span class="line">Vue.use(CheckboxGroup);</span><br><span class="line">Vue.use(Switch);</span><br><span class="line">Vue.use(Select);</span><br><span class="line">Vue.use(Option);</span><br><span class="line">Vue.use(OptionGroup);</span><br><span class="line">Vue.use(Button);</span><br><span class="line">Vue.use(ButtonGroup);</span><br><span class="line">Vue.use(Table);</span><br><span class="line">Vue.use(TableColumn);</span><br><span class="line">Vue.use(DatePicker);</span><br><span class="line">Vue.use(TimeSelect);</span><br><span class="line">Vue.use(TimePicker);</span><br><span class="line">Vue.use(Popover);</span><br><span class="line">Vue.use(Tooltip);</span><br><span class="line">Vue.use(Breadcrumb);</span><br><span class="line">Vue.use(BreadcrumbItem);</span><br><span class="line">Vue.use(Form);</span><br><span class="line">Vue.use(FormItem);</span><br><span class="line">Vue.use(Tabs);</span><br><span class="line">Vue.use(TabPane);</span><br><span class="line">Vue.use(Tag);</span><br><span class="line">Vue.use(Tree);</span><br><span class="line">Vue.use(Alert);</span><br><span class="line">Vue.use(Slider);</span><br><span class="line">Vue.use(Icon);</span><br><span class="line">Vue.use(Row);</span><br><span class="line">Vue.use(Col);</span><br><span class="line">Vue.use(Upload);</span><br><span class="line">Vue.use(Progress);</span><br><span class="line">Vue.use(Spinner);</span><br><span class="line">Vue.use(Badge);</span><br><span class="line">Vue.use(Card);</span><br><span class="line">Vue.use(Rate);</span><br><span class="line">Vue.use(Steps);</span><br><span class="line">Vue.use(Step);</span><br><span class="line">Vue.use(Carousel);</span><br><span class="line">Vue.use(CarouselItem);</span><br><span class="line">Vue.use(Collapse);</span><br><span class="line">Vue.use(CollapseItem);</span><br><span class="line">Vue.use(Cascader);</span><br><span class="line">Vue.use(ColorPicker);</span><br><span class="line">Vue.use(Transfer);</span><br><span class="line">Vue.use(Container);</span><br><span class="line">Vue.use(Header);</span><br><span class="line">Vue.use(Aside);</span><br><span class="line">Vue.use(Main);</span><br><span class="line">Vue.use(Footer);</span><br><span class="line">Vue.use(Timeline);</span><br><span class="line">Vue.use(TimelineItem);</span><br><span class="line">Vue.use(Link);</span><br><span class="line">Vue.use(Divider);</span><br><span class="line">Vue.use(Image);</span><br><span class="line">Vue.use(Calendar);</span><br><span class="line">Vue.use(Backtop);</span><br><span class="line">Vue.use(PageHeader);</span><br><span class="line">Vue.use(CascaderPanel);</span><br><span class="line"></span><br><span class="line">Vue.use(Loading.directive);</span><br><span class="line"></span><br><span class="line">Vue.prototype.$loading = Loading.service;</span><br><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br><span class="line">Vue.prototype.$notify = Notification;</span><br><span class="line">Vue.prototype.$message = Message;</span><br></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><strong>App.vue</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;.&#x2F;assets&#x2F;logo.png&quot;&gt;</span><br><span class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;el-button @click.native&#x3D;&quot;startHacking&quot;&gt;Let&#39;s do it&lt;&#x2F;el-button&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;block&quot;&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;demonstration&quot;&gt;显示默认颜色&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;el-button type&#x3D;&quot;success&quot;&gt;成功按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">      &lt;el-button type&#x3D;&quot;warning&quot;&gt;警告按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">      &lt;el-button type&#x3D;&quot;danger&quot;&gt;危险按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">      &lt;el-button type&#x3D;&quot;info&quot;&gt;信息按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">      &lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;br&#x2F;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;block&quot;&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;demonstration&quot;&gt;hover 显示颜色&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">        &lt;el-button :plain&#x3D;&quot;true&quot; type&#x3D;&quot;success&quot;&gt;成功按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">        &lt;el-button :plain&#x3D;&quot;true&quot; type&#x3D;&quot;warning&quot;&gt;警告按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">        &lt;el-button :plain&#x3D;&quot;true&quot; type&#x3D;&quot;danger&quot;&gt;危险按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">        &lt;el-button :plain&#x3D;&quot;true&quot; type&#x3D;&quot;info&quot;&gt;信息按钮&lt;&#x2F;el-button&gt;</span><br><span class="line">      &lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  data()&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">      msg:&#39;我开始用element了&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    startHacking()&#123;</span><br><span class="line">      this.$notify(&#123;</span><br><span class="line">        title: &#39;我上班了&#39;,</span><br><span class="line">        message: &#39;真好！又开始秃头了&#39;,</span><br><span class="line">        duration: 6000</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  font-family: &#39;Avenir&#39;, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #2c3e50;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>main.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The Vue build version to load with the `import` command</span></span><br><span class="line"><span class="comment">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"><span class="comment">// import ElementUI from &#x27;element-ui&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;Button,Notification&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span> </span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"><span class="comment">// 引入组件并且设置默认组件默认尺寸为small 弹框初始值为z-index=3000</span></span><br><span class="line"><span class="comment">// Vue.use(ElementUI,&#123;size:&#x27;small&#x27;,zIndex:3000&#125;)</span></span><br><span class="line">Vue.use(Button)</span><br><span class="line">Vue.prototype.$notify = Notification</span><br><span class="line"></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  router,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: <span class="string">&#x27;&lt;App/&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="npm-run-dev-后的效果图"><a href="#npm-run-dev-后的效果图" class="headerlink" title="npm run dev 后的效果图"></a><code>npm run dev</code> 后的效果图</h1><p><img src= "/img/loading.gif" data-lazy-src="https://wx2.sbimg.cn/2020/09/07/9ktNY.png" alt="hello,ElementUI"></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">隔壁阿哲</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://asdsa.top/posts/6540.html">https://asdsa.top/posts/6540.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://asdsa.top" target="_blank">Dong's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/elementui/">elementui</a></div><div class="post_share"><div class="social-share" data-image="https://element.eleme.cn/static/resource.a72b8f8.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://ae01.alicdn.com/kf/Hd504b22b89714b9ab01702fd8a664b028.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://ae01.alicdn.com/kf/Hd504b22b89714b9ab01702fd8a664b028.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://ae01.alicdn.com/kf/Hf6df848bf90642fb929438e5d3c8e0fda.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://ae01.alicdn.com/kf/Hf6df848bf90642fb929438e5d3c8e0fda.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/48907.html"><img class="prev-cover" data-lazy-src="https://p.pstatp.com/origin/ff25000179939554ebab" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">butterfly3.0新功能</div></div></a></div><div class="next-post pull-right"><a href="/posts/16744.html"><img class="next-cover" data-lazy-src="https://p.pstatp.com/origin/ff25000179939554ebab" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">解决github上传密钥识别问题</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><label><input id="switch-comments-btn" type="checkbox"/><span class="slider"></span></label><span class="second-comment">gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div></div></div></div></article></main><footer id="footer" style="background-image: url(http://p1.qhimg.com/bdr/__85/t01f2397475af482659.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By 隔壁阿哲</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">🎁此地无银三百两,😁来这就对了铁子</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'npQ6iOFYJ3oJW6wqYcG8egP1-gzGzoHsz',
+      appKey: 'v9KkKhaFMuM4w7gPLzqc53u9',
+      placeholder: '在昵称处输入QQ或者说点好听的~',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+    content = content.replace(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png|webp)/g, '') // remove image link
+    content = content.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '') // remove url
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon 
+    let defaultIcon = '?d=monsterid'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    for (let i = 0; i < array.length; i++) {
+      result += '<div class=\'aside-list-item\'>'
+
+      if (true) {
+        result += `<a href='${array[i].url}' class="thumbnail"><img src='${getIcon(array[i].avatar, array[i].mail)}'></a>`
+      }
+
+      result += `<div class='content'>
+      <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+      <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+      </div></div>`
+    }
+
+    let $dom = document.querySelector('.card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getValineData = () => {
+
+    if (!(AV.applicationId && (AV.applicationKey || AV.masterKey))) {
+      const dataInit = {
+        appId: 'npQ6iOFYJ3oJW6wqYcG8egP1-gzGzoHsz',
+        appKey: 'v9KkKhaFMuM4w7gPLzqc53u9'
+      }
+
+      if (false) {
+        dataInit.serverURL= ''
+      }
+
+      AV.init(dataInit)
+    }
+
+    const query = new AV.Query('Comment');
+    query.descending('createdAt').limit(6)
+
+    var valineArray = []
+    query.find().then(comments => {
+      comments.forEach(comment => {
+        valineArray.push({
+          'avatar': comment.get('QQAvatar'),
+          'content': changeContent(comment.get('comment')),
+          'mail': comment.get('mail'),
+          'nick': comment.get('nick'),
+          'url': comment.get('url'),
+          'date': comment.createdAt,
+        })
+      })
+    }).then(function() {
+      saveToLocal.set('leancloud-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+      generateHtml(valineArray)
+    })
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('.card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('leancloud-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        if (typeof window.AV === 'object') {
+          getValineData()
+        } else {
+          $.getScript('https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js', getValineData)
+        }
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="972502079" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<title>Bootstrap布局控件</title>
+</head>
+<body>
+	<!-- 导航栏 -->
+		<!-- 
+
+			.navbar-fixed-top
+			.navbar-fixed-bottom  固定 （防止交错应向body添加50px内边距）
+			
+			.navbar-static-top 动态（不会交错）
+			.navbar-inverse 反色的背景导航栏
+
+		 -->
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+						<span class="sr-only">切换导航</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Bootstrap布局控件</a>
+				</div>
+				<form class="navbar-form navbar-left hidden-sm hidden-xs" role="search">
+						<div class="form-group">
+							<input type="text" name="" class="form-control" placeholder="Search">
+						</div>	
+						<button type="button" class="btn btn-default">搜索</button>
+				</form>
+				
+				<!-- 导航栏中的按钮 -->
+				<!-- <button type="button" class="btn btn-default navbar-btn">导航栏按钮</button> -->
+
+				<!-- 导航栏中的文字 -->
+				<!-- <span class="navbar-text">用户登录:</span> -->
+
+				<ul class="nav navbar-nav navbar-right hidden-xs"> 
+					<li><a href="#register" data-toggle="modal"><span class="glyphicon glyphicon-user"></span>注册</a></li>
+					<li><a href="#login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>登录</a></li>
+				</ul>
+				<!-- </div> -->
+			</div>
+
+			<div class="collapse navbar-collapse" id="example-navbar-collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#" class="active">下拉菜单</a></li>
+					<li><a href="#">SCAN</a></li>
+					<!-- 指定下拉菜单都包裹在.dropdown里面 -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							实例
+							<b class="caret"></b>
+						</a>
+				<!-- 创建下拉菜单.dropdowm-menu -->
+				<!-- 上拉菜单：.dropup -->
+				<!-- 
+					下拉菜单右对齐：.dropdown-menu-right
+					标题：.dropdown-header
+				 -->
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation" class="dropdown-header">下拉菜单标题</li>
+							<li><a href="#">实例1</a></li>
+							<!-- 下拉菜单禁用项 -->
+							<li class="disabled"><a href="#">实例2</a></li>
+							<li><a href="#">实例3</a></li>
+							<li class="divider"></li>
+							<!-- .divider代表下拉菜单分割线 -->
+							<li><a href="#">分离链接1</a></li>
+							<li class="divider"></li>
+							<li><a href="#">分离链接2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+						<!-- 创建模态框 -->
+
+				<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<!-- 使用模态框必须有触发器data-target -->
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">模态框标题</h4>
+							</div>
+							<div class="modal-body">
+								<form class="bs-example bs-example-form">
+									<div class="input-group">
+										<span class="input-group-addon">账号：</span>
+										<input type="text" name="admin" class="form-control" placeholder="请输入账号">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon">密码：</span>
+										<input type="password" name="password" class="form-control" placeholder="请输入密码">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default">登陆</button><button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<!-- 使用模态框必须有触发器data-target -->
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">模态框标题</h4>
+							</div>
+							<div class="modal-body">
+								<form class="bs-example bs-example-form">
+									<div class="input-group">
+										<label class="control-label">账号：</label>
+										<input type="text" name="admin" class="form-control" placeholder="请输入账号">
+									</div>
+									<div class="input-group">
+										<label class="control-label">密码：</label>
+										<input type="password" name="password" class="form-control" placeholder="请输入密码">
+									</div>
+									<div class="input-group">
+										<label class="control-label">确认密码：</label>
+										<input type="password" name="password" class="form-control" placeholder="请输入密码">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default">注册</button><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+	<div class="container">		
+		<div class="row">
+			<!-- 面包屑导航 -->
+			<div class="col-sm-4 col-xs-0 col-lg-2" title="面包屑导航" data-placement="bottom" data-toggle="tooltip">
+				<ul class="breadcrumb">
+					<li><a href="#">主页</a></li>
+					<li><a href="#">2019</a></li>
+					<li class="active">十月</li>
+				</ul>
+			</div>
+			<!-- 导航元素 -->
+			<!-- 表格（标签）导航 -->
+			<div class="col-sm-8 col-xs-12 col-lg-10">
+				<p>标签式导航菜单</p>
+				<!-- 
+					
+					默认： .nav nav-tabs
+
+					胶囊式导航菜单： .nav nav-pills
+					
+					垂直导航：.nav nav-pills nav-stacked
+
+					两端对齐导肮： .nav nav-pills nav-justified 
+					(>768px 等同宽度    <768px   堆叠样式)
+
+				 -->
+				<ul class="nav nav-pills">
+					<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+					<!-- 
+						与.tab-pane和data-toggle="tab"(data-toggle="pill")连用可设置标签页对应相应内容
+					 -->
+					<li><a  href="#menu2" data-toggle="tab">标签</a></li>
+					<li class="disabled"><a href="#">iOS(禁用链接)</a></li>
+					
+					<li><a href="#menu1" data-toggle="tab">按钮组</a></li>
+					<li><a href="#menu3" data-toggle="tab">徽章</a></li>
+					<li><a href="#menu4" data-toggle="tab">输入框组</a></li>
+					<li><a href="#menu5" data-toggle="pill">页面标题</a></li>
+					<li><a href="#menu6" data-toggle="pill">缩略图</a></li>
+					<li><a href="#menu7" data-toggle="tab">警告</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">其他<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#menu8" data-toggle="tab">进度条</a></li>
+							<li><a href="#menu9" data-toggle="tab">多媒体对象<span class="badge">30</span></a></li>
+							<li><a href="#menu10" data-toggle="pill">列表组</a></li>
+							<li class="divider"></li>
+							<li><a href="#menu11" data-toggle="pill">面板</a></li>
+							<li><a href="#menu12" data-toggle="tab">Well</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="data-toggle" data-toggle="dropdown">插件<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#menu13" data-toggle="pill">模态框插件</a></li>
+							<li><a href="#menu14" data-toggle="pill">滚动监听插件</a></li>
+							<li><a href="#menu15" data-toggle="pill">tab标签页插件</a></li>
+							<li><a href="#menu16" data-toggle="pill">轮播图插件</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+
+
+	<div class="col-xs-12 col-sm-8 col-lg-10 pull-right">
+		<div class="tab-content">
+			<div id="menu4" class="tab-pane fade">
+				<h3>输入框组:</h3>
+				<!-- 
+					
+						输入框大小：.input-group-lg & sm & xs
+				 -->
+				<div style="padding: 30px">
+					<form class="bs-example bs-example-form" role="form">
+						<div class="input-group">
+							<span class="input-group-addon">姓名：</span>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Name">
+							</div>
+						</div>
+						<br>
+						<div class="input-group">					
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Age">
+							</div>
+							<span class="input-group-addon">岁</span>
+						</div>
+						<br>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon">工资：</span>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Salary">
+							</div>
+							<span class="input-group-addon">￥</span>
+						</div><br>
+						<!-- 单选和复选框 -->
+						<div class="input-group">
+								<span class="input-group-addon"><input type="checkbox" name=""></span>
+								<input type="text" class="form-control" placeholder="备注1">
+						</div><br>
+						<div class="input-group">
+							<span class="input-group-addon"><input type="radio" name="备注2"></span>
+							<input type="text" class="form-control" placeholder="备注2">
+						</div><br>
+						<!-- 按钮插件 -->
+						<div class="input-group">
+							<input type="text" name="" class="form-control" placeholder="按钮插件">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">链接<span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">功能</a></li>
+									<li><a href="#">其他</a></li>
+									<li class="divider"></li>
+									<li><a href="#">分离的链接</a></li>
+								</ul>
+
+							</span>
+						</div> 
+					</form>
+				</div>
+				<!-- 分页（.pagination） -->
+				<div class="row">
+					<!-- <ul class="pagination pagination-xs">
+						<li><a href="#">&laquo;</a></li>
+						<li><a href="#" class="active">1</a></li>
+						<li><a href="#" class="disabled">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul> -->
+					<!-- 
+						 .paper     分页链接居中对齐
+
+						 li.previous   左对齐
+
+						 li.next       右对齐
+
+						 li.disabled   禁用
+					 -->
+					<ul class="pager">
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">下一页</a></li>
+					</ul>	
+				</div>
+			</div>
+		<div id="menu1" class="tab-pane fade">
+			<h3>按钮组:</h3>
+			<!-- 按钮组工具栏btn-toolbar -->
+			<div class="btn-toolbar" role="toolbar">
+
+			<!-- 垂直按钮组：btn-group-vertical-->
+				<!-- 大小 -->
+				<div class="btn-group-vertical btn-group-lg">
+					<button type="button" class="btn btn-default">按钮1</button>
+					<button type="button" class="btn btn-default">按钮2</button>
+					<button type="button" class="btn btn-default">按钮3</button>
+				</div>
+				<div class="btn-group">
+					<!-- 
+						提示框插件：
+
+						data-toggle="pover"
+						data-placement="left,right,bottom,top"
+						data-content="提示框内容"
+
+					  -->
+					<button type="button" class="btn btn-primary" title="Popover title" data-toggle="popover" data-placement="bottom" data-content="底侧的Popover内容">按钮4</button>
+					<button type="button" class="btn btn-info" title="Popover title" data-toggle="popover" data-placement="top" data-content="顶部的Popover内容">按钮5</button>
+					<button type="button" class="btn btn-success" title="Popover title" data-toggle="popover" data-placement="left" data-content="左侧的Popover内容">按钮6</button> 
+					<button type="button" class="btn btn-danger" title="Popover title" data-toggle="popover" data-placement="right" data-content="右侧的Popover内容">按钮7</button>
+
+					<!-- 嵌套==按钮组吗默认下拉菜单 -->
+					<!-- .btn-group嵌套另一个.btn-group -->
+					<!-- 
+
+						按钮下拉菜单大小：.btn-lg .btn-sm  .btn-xs
+						
+						按钮上拉菜单：dropup
+
+					 -->
+					<div class="btn-group dropup">
+						<button type="button" class="btn btn-warning dropdown-toggle btn-sm" data-toggle="dropdown">默认下拉<span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">下拉链接1</a></li>
+							<li><a href="#">下拉链接2</a></li>
+						</ul>
+					</div>
+					<!-- 分割按钮下拉菜单 -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-warning">分割下拉</button>
+						<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">下拉链接1</a></li>
+							<li><a href="#">下拉链接2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu2">
+			<h3>标签:</h3>
+			<span class="label label-default">默认标签</span>
+			<span class="label label-primary">主要标签</span>
+			<span class="label label-success">成功标签</span>
+			<span class="label label-info">信息标签</span>
+			<span class="label label-warning">警告标签</span>
+			<span class="label label-danger">危险标签</span>
+		</div>
+
+
+		<div class="tab-pane fade" id="menu3">
+			<h3>徽章:</h3> 
+			<p>.badge 类指定未读消息的数量：</p>
+			<a href="#">收件箱<span class="badge">50</span></a>
+
+		</div>
+		<div class="tab-pane fade  in active" id="home">
+			<h3>超大屏幕：</h3>
+			<!-- 为了获得占用全部宽度且不带圆角的超大屏幕
+
+				用    .jumbotron > .container
+
+			 -->
+			<div class="jumbotron">
+				<div class="container">
+				<h1>欢迎登陆界面！</h1>
+				<p>这是一个超大屏幕（Jumbotron）的实例。</p>
+				<p><a href="#" class="btn btn-primary btn-lg" role="button">学习更多</a></p></div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu5">
+			<div class="page-header">
+				<h1>页面标题实例<small>(子标题)</small></h1>
+			</div>
+			<p>这是一个示例文本。这是一个示例文本。这是一个示例文本。</p>
+		</div>
+
+		<div id="menu6" class="tab-pane fade">
+			<h3>缩略图</h3>
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="images/eh.jpg" title="通用的占位符缩略图">
+						<div class="caption">
+							<h3>缩略图标签</h3>
+							<p>一些示例文本。一些实力文本</p>
+							<p>
+								<a href="#" class="btn btn-primary" role="button">按钮1</a>
+								<a href="#" class="btn btn-primary" role="button">按钮2</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="images/lu.jpg" title="通用的占位符缩略图">
+						<div class="caption">
+							<h3>缩略图标签</h3>
+							<p>一些示例文本。一些实力文本</p>
+							<p>
+								<a href="#" class="btn btn-primary" role="button">按钮1</a>
+								<a href="#" class="btn btn-primary" role="button">按钮2</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="images/cat.jpg" title="通用的占位符缩略图">
+						<div class="caption">
+							<h3>缩略图标签</h3>
+							<p>一些示例文本。一些实力文本</p>
+							<p>
+								<a href="#" class="btn btn-primary" role="button">按钮1</a>
+								<a href="#" class="btn btn-primary" role="button">按钮2</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="images/yuan.jpg" title="通用的占位符缩略图">
+						<div class="caption">
+							<h3>缩略图标签</h3>
+							<p>一些示例文本。一些实力文本</p>
+							<p>
+								<a href="#" class="btn btn-primary" role="button">按钮1</a>
+								<a href="#" class="btn btn-primary" role="button">按钮2</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu7">
+			<!-- 
+				可取消的的警告：
+						.alert-dismissable
+							关闭按钮(&times;)+警告内容	
+				
+				警告中的链接：
+						a.alert-link
+			 -->
+			<h3>Bootstrap警告</h3>
+			<div class="alert alert-success alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<!-- 确保带有data-dismiss="alert"属性的button -->
+				<a href="#" class="alert-link">成功！很好的完成了提交</a>
+			</div>
+			<div class="alert alert-info alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>	
+				<a href="#" class="alert-link">信息！请注意这条信息</a>
+			</div>
+			<div class="alert alert-warning alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<a href="#" class="alert-link">警告！请不要提交</a>
+			</div>
+			<div class="alert alert-danger alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<a href="#" class="alert-link">错误！请进行一些修改</a>
+			</div>
+		</div>
+
+
+		<div class="tab-pane fade" id="menu8">
+			<!-- 原理：采用c3过度和动画获得效果 -->
+			<!-- 
+				版本支持：
+						ie9 及之前版本和旧版firefox不支持
+						opera 12 也不支持动画
+			 -->
+			 <!-- 
+				
+				条纹进度条：.progress-striped
+				
+				动画进度条： .active
+
+			  -->
+			<h3>进度条</h3>
+			<div class="progress progress-striped active">
+			 	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+			 		<span class="sr-only">90% 完成（成功）</span>
+			 	</div>
+			</div>
+			<div class="progress progress-striped active">
+			 	<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+			 		<span class="sr-only">30% 完成（成功）</span>
+			 	</div>
+			</div>
+			<div class="progress progress-striped active">
+			 	<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+			 		<span class="sr-only">20% 完成（成功）</span>
+			 	</div>
+			</div>
+			<div class="progress progress-striped active">
+			 	<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+			 		<span class="sr-only">10% 完成（成功）</span>
+			 	</div>
+			</div>
+			<!-- 堆叠进度条 -->
+			<div class="progress">
+			    <div class="progress-bar progress-bar-success" role="progressbar"
+			         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+			         style="width: 40%;">
+			        <span class="sr-only">40% 完成</span>
+			    </div>
+			    <div class="progress-bar progress-bar-info" role="progressbar"
+			         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+			         style="width: 30%;">
+			        <span class="sr-only">30% 完成（信息）</span>
+			    </div>
+			    <div class="progress-bar progress-bar-warning" role="progressbar"
+			         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+			         style="width: 20%;">
+			        <span class="sr-only">20% 完成（警告）</span>
+			    </div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu9">
+			<!-- 适合做流评论（回复） -->
+			<h3>多媒体对象</h3>
+			<div class="media">
+				<div class="media-left media-top">
+					<img src="images/2.jpg" class="media-object" style="width: 60px">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">置顶</h4>
+					<p>这是一段示例文本...这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..</p>
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-body">
+					<h4 class="media-heading">居中</h4>
+					<p>这是一段示例文本...这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..</p>
+				</div>
+				<div class="media-right media-middle">
+					<img src="images/2.jpg" class="media-object" style="width: 60px">
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<img src="images/2.jpg" class="media-object" style="width: 60px">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">置底</h4>
+					<p>这是一段示例文本...这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..</p>
+					<div class="media">
+						<div class="media-left">
+							<img src="images/2.jpg" class="media-object" style="width: 60px">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading">内嵌多媒体对象</h4>
+							<p>这是一段示例文本...这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..这是一段示例文本..</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="menu10">
+			<h3>列表组</h3>
+			<!-- 
+				.list-group .list-group-item .list-group-heading
+
+				水平显示C3代码：
+				.list-group-horizontal .list-group-item {
+				    display: inline-block;
+				}
+				.list-group-horizontal .list-group-item {
+				    margin-bottom: 0;
+				    margin-left:-4px;
+				    margin-right: 0;
+				}
+				.list-group-horizontal .list-group-item:first-child {
+				    border-top-right-radius:0;
+				    border-bottom-left-radius:4px;
+				}
+				.list-group-horizontal .list-group-item:last-child {
+				    border-top-right-radius:4px;
+				    border-bottom-left-radius:0;
+				}
+
+			 -->
+			<div class="list-group">
+				<a href="#" class="list-group-item active">
+					<h4 class="list-group-heading">入门网站包</h4>
+				</a>
+				<a href="#" class="list-group-item ">
+					<h4 class="list-group-heading">免费域名注册</h4>
+					<p>您将通过网页进行免费域名注册</p>
+				</a>
+				<a href="#" class="list-group-item">
+					<span class="badge">新</span>
+					<h4 class="list-group-heading">24*7支持</h4>
+					<p>我们提供24*7支持</p>
+				</a>
+			</div>
+			<div class="list-group">
+				<a href="#" class="list-group-item active">
+					<h4 class="list-group-heading">商务网站包</h4>
+				</a>
+				<a href="#" class="list-group-item ">
+					<h4 class="list-group-heading">免费域名注册</h4>
+					<p>您将通过网页进行免费域名注册</p>
+				</a>
+				<a href="#" class="list-group-item">
+					<span class="badge">新</span>
+					<h4 class="list-group-heading">24*7支持</h4>
+					<p>我们提供24*7支持</p>
+				</a>
+			</div>
+		</div>
+
+
+		<div id="menu11" class="tab-pane fade">
+			<h3>面板Panels</h3>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						面板标题
+					</h3>
+				</div>
+				<div class="panel-body">
+					这是一个基本的面板
+				</div>
+				<div class="panel-footer">
+					面板脚注
+				</div>
+			</div>
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						面板标题
+					</h3>
+				</div>
+				<div class="panel-body">
+					这是一个基本的面板
+				</div>
+				<div class="panel-footer">
+					面板脚注
+				</div>
+			</div>
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						面板标题
+					</h3>
+				</div>
+				<div class="panel-body">
+					这是一个基本的面板
+				</div>
+				<div class="panel-footer">
+					面板脚注
+				</div>
+			</div>
+			<div class="panel panel-warning">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						面板标题
+					</h3>
+				</div>
+				<div class="panel-body">
+					这是一个带列表组的基本面板
+				</div>
+				<ul class="list-group">
+			        <li class="list-group-item">免费域名注册</li>
+			        <li class="list-group-item">免费 Window 空间托管</li>
+			        <li class="list-group-item">图像的数量</li>
+			        <li class="list-group-item">24*7 支持</li>
+			        <li class="list-group-item">每年更新成本</li>
+			    </ul>
+				<div class="panel-footer">
+					面板脚注
+				</div>
+			</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						面板标题
+					</h3>
+				</div>
+				<div class="panel-body">
+					这是一个带表格的基础面板
+				</div>
+				<table class="table">
+				    <th>产品</th><th>价格 </th>
+				    <tr><td>产品 A</td><td>200</td></tr>
+				    <tr><td>产品 B</td><td>400</td></tr>
+				</table>
+				<div class="panel-footer">
+					面板脚注
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu12">
+			<h3>Well<small>（引起内容凹陷显示或插图效果的div）</small></h3>
+			<div class="well well-lg">
+				你好，我在大Well中！
+			</div>
+			<div class="well well-sm">
+				你好，我在小Well中！
+			</div>
+
+		</div>
+		<div class="tab-pane fade" id="menu13">
+
+			<h3>创建模态框（Modal）</h3>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">开始演示框</button>
+			<!-- 
+
+				fade:切换淡入淡出
+				
+				modal：div内容识别为模态框
+
+				aria-labelledby="myModalLabel":用用模板框的标题
+
+				aria-hidden="true":当前窗口不可见，需要触发
+				
+				.close 关闭按钮类
+
+				data-dismiss="modal":自定义data，用于关闭模态框
+
+				data-toggle="modal"：自定义data用于打开模态窗口
+
+				.modal-body :模态窗口主体设置样式
+
+				.modal-footer:模态窗口底部设置样式
+
+				.data-keyboard="false":无法esc隐藏
+
+				.backdrop:点击外部无法关闭模态框
+
+
+ 			 -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<!-- 使用模态框必须有触发器data-target -->
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">模态框标题</h4>
+						</div>
+						<div class="modal-body">
+							这是一段文字。
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default">登陆</button><button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu14">
+			<nav id="myScrollspy" class="navbar navbar-default navbar-static" role="navigation">
+				<div class="container-fluid"> 
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse" 
+								data-target=".bs-js-navbar-scrollspy">
+							<span class="sr-only">切换导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">教程名称</a>
+					</div>
+					<div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#ios">iOS</a></li>
+							<li><a href="#svn">SVN</a></li>
+							<li class="dropdown">
+								<a href="#" id="navbarDrop1" class="dropdown-toggle" 
+								   data-toggle="dropdown">
+									Java <b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu" role="menu" 
+									aria-labelledby="navbarDrop1">
+									<li><a href="#jmeter" tabindex="-1">jmeter</a></li>
+									<li><a href="#ejb" tabindex="-1">ejb</a></li>
+									<li class="divider"></li>
+									<li><a href="#spring" tabindex="-1">spring</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div data-spy="scroll" data-target="#myScrollspy" data-offset="0" 
+				 style="height:200px;overflow:auto; position: relative;">
+				<div class="section">
+					<h4 id="ios">iOS<small><a href="#" onclick="removeSection(this);">
+						&times; 删除该部分</a></small>
+					</h4>
+					<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+						TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+				</div>
+				<div class="section">
+					<h4 id="svn">SVN<small></small></h4>
+					<p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
+				</div>
+				<div class="section">
+					<h4 id="jmeter">jMeter<small><a href="#" onclick="removeSection(this);">
+						&times; 删除该部分</a></small>
+					</h4>
+					<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+				</div>
+				<div class="section">
+					<h4 id="ejb">EJB</h4>
+					<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。</p>
+				</div>
+				<div class="section">
+					<h4 id="spring">Spring</h4>
+					<p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+					<p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。</p>
+				</div>
+			</div>
+			<span id="activeitem" style="color:red;"></span>
+		</div>
+
+
+		<div class="tab-pane fade" id="menu15">
+			<hr>
+			<p class="active-tab"><strong>激活的标签页</strong>：<span></span></p>
+			<p class="previous-tab"><strong>前一个激活的标签页</strong>：<span></span></p>
+			<hr>
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active"><a href="#house" data-toggle="tab">
+					菜鸟教程</a></li>
+				<li><a href="#ios" data-toggle="tab">iOS</a></li>
+				<li class="dropdown">
+					<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+					   data-toggle="dropdown">
+						Java <b class="caret"></b></a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+						<li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+						<li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="house">
+					<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+				</div>
+				<div class="tab-pane fade" id="ios">
+					<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+						TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+				</div>
+				<div class="tab-pane fade" id="jmeter">
+					<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+				</div>
+				<div class="tab-pane fade" id="ejb">
+					<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="menu16">
+			<div id="myCarousel" class="carousel slide">
+				<!-- 轮播carousel指标 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<!-- 轮播项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/slide1.jpg" alt="First slide">
+						<div class="carousel-caption">标题1</div>
+					</div>
+					<div class="item">
+						<img src="images/slide2.jpg" alt="Second slide">
+						<div class="carousel-caption">标题2</div>
+					</div>
+					<div class="item">
+						<img src="images/slide3.jpg" alt="Third slide">
+						<div class="carousel-caption">标题3</div>
+					</div>
+				</div>
+				<!-- 轮播导航 -->
+				<a href="#myCarousel" class="carousel-control left" data-slide="prev">
+					<span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a href="#myCarousel" class="carousel-control right" data-slide="next">
+					<span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			<div style="text-align:center;">
+				<input type="button" class="btn start-slide" value="Start">
+				<input type="button" class="btn pause-slide" value="Pause">
+				<input type="button" class="btn prev-slide" value="Previous Slide">
+				<input type="button" class="btn next-slide" value="Next Slide">
+				<input type="button" class="btn slide-one" value="Slide 1">
+				<input type="button" class="btn slide-two" value="Slide 2">
+				<input type="button" class="btn slide-three" value="Slide 3">
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		//模态框的钩子调用
+		$(function(){
+			$('#myModal').on('show.bs.modal',function(){alert("调用了Show方法");})
+			$('#myModal').on('shown.bs.modal',function(){alert("模板框打开触发方法");})
+			$('#myModal').on('hide.bs.modal',function(){alert("模板框隐藏触发方法");})
+			$('#myModal').on('hiden.bs.modal',function(){alert("模态框完全隐藏");})
+		})
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			// 下拉菜单插件
+			$(".dropdown-toggle").dropdown('toggle')
+			$("[data-toggle='tooltip']").tooltip()
+			// 弹出框插件
+			$("[data-toggle='popover']").popover()
+			// 滚动监听勾子模型
+			removeSection = function(e) {
+			$(e).parents(".section").remove();
+			$('[data-spy="scroll"]').each(function () {
+				// 调用.refresh更新dom
+				var $spy = $(this).scrollspy('refresh')
+				});
+			}
+			$("#myScrollspy").scrollspy();
+			$('#myScrollspy').on('activate.bs.scrollspy', function () {
+				var currentItem = $(".nav li.active > a").text();
+				$("#activeitem").html("目前您正在查看 - " + currentItem);
+			})
+			// tab胶囊标签页勾子模型
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+				// 获取已激活的标签页的名称
+				var activeTab = $(e.target).text(); 
+				// 获取前一个激活的标签页的名称
+				var previousTab = $(e.relatedTarget).text(); 
+				$(".active-tab span").html(activeTab);
+				$(".previous-tab span").html(previousTab);
+			});
+
+		})
+	</script>
+	<script>
+		$(function(){
+			// 初始化轮播方法
+			$(".start-slide").click(function(){
+				$("#myCarousel").carousel('cycle');
+			});
+			// 停止轮播
+			$(".pause-slide").click(function(){
+				$("#myCarousel").carousel('pause');
+				// data-pause ->  true
+			});
+			// 循环轮播到上一个项目
+			$(".prev-slide").click(function(){
+				$("#myCarousel").carousel('prev');
+			});
+			// 循环轮播到下一个项目
+			$(".next-slide").click(function(){
+				$("#myCarousel").carousel('next');
+			});
+			// 循环轮播到某个特定的帧 
+			$(".slide-one").click(function(){
+				$("#myCarousel").carousel(0);
+			});
+			$(".slide-two").click(function(){
+				$("#myCarousel").carousel(1);
+			});
+			$(".slide-three").click(function(){
+				$("#myCarousel").carousel(2);
+			});
+			// 轮播勾子函数
+
+			$('#myCarousel').on('slide.bs.carousel',function(){
+				alert("调用slide方法触发");
+			})
+			$('#myCarousel').on('slid.bs.carousel',function(){
+				alert("slide方法完成时触发");
+			});
+		});
+	</script>
+</body>
+</html>
