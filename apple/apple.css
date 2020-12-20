@@ -1,12 +1,18 @@
+/*清除默认样式*/
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
 }
+/*设置宽高为屏占满自适应*/
 body,html{
     width: 100%;
 }
+
+/*
+    头部
+*/
 .header{
     width: 100%;
     position: fixed;
@@ -14,6 +20,10 @@ body,html{
     left: 0;
     z-index: 30;
 }
+
+/*
+    广告栏样式
+*/
 header .top-box{
     height: 40px;
     background-color: #444;
@@ -27,6 +37,13 @@ header .top-box{
     line-height: 40px;
     text-align: right;
 }
+
+/*
+        
+    导航栏的样式
+
+*/
+
 header nav{
     height: 44px;
     background-color: rgba(0,0,0,0.92);
@@ -37,6 +54,9 @@ header nav{
     margin: 0 auto;
     overflow: hidden;
 }
+/*
+    选择第八个子代列表添加搜索符号链接
+*/
 .nav-box ul li:nth-child(8) a{
     display: block;
     width: 18px;
@@ -47,6 +67,9 @@ header nav{
     background-position: center -44px;
     /* background-color: red; */
 }
+/*
+    选择最后一个子代列表添加 购物车 符号链接
+*/
 .nav-box ul li:last-child a{
     display: block;
     width: 17px;
@@ -58,6 +81,9 @@ header nav{
     /* background-color: red; */
 }
 .nav-box ul{
+    /*
+        样式改为固定flex格式（不会随鼠标滑轮滚动而消失）
+    */
     display: flex;
     height: 44px;
     justify-content: space-between;
@@ -68,6 +94,17 @@ header nav{
     font-size: 14px;
     color: #c2c2c7;
 }
+
+
+/*
+    main内容
+*/
+
+/*
+    
+    内容栏
+
+*/
 main{
     margin-top: 88px;
     width: 100%;
@@ -90,6 +127,11 @@ main .zaixian{
     font-size: 13px;
     color: #1d1d1f;
 }
+/*
+
+    iphone12栏样式
+
+*/
 main .iphone12{
     /* background-color: #000; */
     width: 100%;
@@ -144,9 +186,19 @@ main .iphone12{
     font-size: 21px;
     color: #a1a1a6;
 }
+/*
+    设置最后一个子p偏移量为20px
+*/
 .iphone12 .phone12-bom p:last-child{
     margin-top: 20px;
 }
+
+/*
+
+    iphone12mini页
+
+*/
+
 .iphone12mini{
     width: 100%;
     height: 903px;
@@ -203,6 +255,15 @@ main .iphone12{
 .iphone12mini .phone12-bom p:last-child{
     margin-top: 20px;
 }
+
+
+/*
+
+    apple watch手表页
+
+*/
+
+
 main .watch{
     /* background-color: #000; */
     width: 100%;
@@ -237,6 +298,14 @@ main .watch{
     color: #2997ff;
     font-size: 20px;
 }
+
+/*
+
+    imgbox iPhone宣传产品图片
+
+*/
+
+
 main .imgbox{
     display: flex;
     flex-wrap: wrap;
@@ -245,6 +314,9 @@ main .imgbox{
     padding: 0 5px;
 }
 main .imgbox div{
+    /*
+        设置div盒子自适应函数
+    */
     width: calc((100% - 5px * 4) / 2);
     height: 624px;
     background-color: #FBFBFD;
@@ -379,21 +451,43 @@ main .imgbox div{
 .imgbox>div:nth-child(6) img:last-child{
     margin-top: 28px;
 }
+
+/*
+    
+    设置伪类效果
+
+*/
+
 main .iphone12,
 .iphone12mini,
 .watch{
+    /*
+        移入变成小手
+    */
     cursor: pointer;
 }
 main .iphone12 .zaixian{
+    /*
+        移入变默认
+    */
     cursor: initial;
 }
 main a:hover{
+    /*
+        移入变下边线
+    */
     text-decoration: underline;
 }
 .nav-box ul li a span:hover{
+    /*
+        移入改变字体大小及颜色
+    */
     font-size: 14px;
     color: #fff;
 }
+/*
+    移入更改图片
+*/
 .nav-box ul li:nth-child(8) a:hover{
     display: block;
     width: 18px;
@@ -404,6 +498,15 @@ main a:hover{
     background-position: center center;
     /* background-color: red; */
 }
+
+/*
+
+    footer底部
+    利用<dl> 标签定义了定义列表
+    <dl> 标签用于结合 <dt> （定义列表中的项目）和 <dd> （描述列表中的项目）。
+
+*/
+
 footer{
     height: 515px;
     background-color: #f5f5f7;
