@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#uu>li').mouseover(function(){
+				$(this).css("backgroundColor","red").siblings("li").css("backgroundColor","")
+			}).click(function(){
+				$(this).css("fontSize","30px").css("color","green").css("fontFamily","宋体")
+			})
+		})	
+	</script>
+	<title></title>
+</head>
+<body>
+	<input type="reset" name="" onclick="javascript:history.go(0)">
+	<ul id="uu">
+		<li>第1个</li>
+		<li>第2个</li>
+		<li>第3个</li>
+		<li>第4个</li>
+		<li>第5个</li>
+	</ul>
+</body>
+</html>

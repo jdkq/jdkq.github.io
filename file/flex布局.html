@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>CSS之弹性布局</title>
+	<style type="text/css">
+		html,body{
+			height: 100%;
+			padding: 0;
+    		margin: 0;
+		}
+		#app{
+			height: 100%;
+			background-color: #ddd;
+		}
+		.header{
+			height: 15%;
+		}
+		.nav_header{
+			height: 50%;
+			background-color: #fff;
+			position: relative;
+		}
+		.title{
+			line-height: 50%;
+		}
+		.return{
+			position: absolute;
+			left: 0;
+		}
+		.search{
+			height: 50%;
+			background-color: #ddd
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="header">
+			<div class="nav_header">
+				<div class="return"><</div>
+				<div class="title">
+					<span>产品分类</span>
+				</div>
+			</div>
+			<div class="search"></div>
+		</div>
+		<div class="section">
+			<div class="sidebar"></div>
+			<div class="content"></div>
+		</div>
+		<div class="footer">
+			<div></div>
+		</div>
+	</div>
+</body>
+</html>

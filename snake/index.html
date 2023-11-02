@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<title>贪吃蛇</title>
+</head>
+<body>
+	<div id="map"></div><br>
+	<div class="show">
+		<b>得分：</b><span id="mark">0</span>
+		<div style="float: right;"><b>段位：</b><span id="titles">结束后自动结算</span></div><br><br>
+	</div>
+
+	<div class="box">
+		<button type="button" class="reload" onclick="location.reload()">重玩</button>
+		<button type="button" class="start" id="start">开始游戏</button>
+		<table>
+			<tr>
+				<td></td>
+				<td><button id="top" name="top"><i class="fa fa-chevron-up fa-2x"></i></button></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><button id="left" name="left"><i class="fa fa-chevron-left fa-2x"></i></button></td>
+				<td></td>
+				<td><button id="right" name="right"><i class="fa fa-chevron-right fa-2x"></i></button></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button id="bottom" name="bottom"><i class="fa fa-chevron-down fa-2x"></i></button></td>
+				<td></td>
+			</tr>
+		</table>
+		<button type="button" class="au"><span>Author:Dong</span></button>
+	</div>
+	<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+html,body{
+	margin: 0;
+	height: 100%;
+}
+body{
+	padding: 0;
+	margin: 0;
+}
+#map{
+	width: 99%;
+	height: 60%;
+	background-color: lightgray;
+	padding: 0px;
+	margin:auto;
+	position: relative;
+}
+.show{
+	width: 80%;
+	height: auto;
+	margin:auto;
+}
+.box{
+	width: 80%;
+	height: auto;
+	margin:auto;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: #000;
+	position: relative;
+}
+#mark{
+	text-decoration: underline;
+}
+.box>button{
+	position: absolute;
+	background-color: #000;
+	border: 0;
+	color: #fff;
+}
+.box>button:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.start{
+	right: 5px;
+}
+.au{
+	right: 5px;
+	bottom: 5px;
+}
+.box table{
+	margin:auto;
+}
+.box table tr{
+	height: 40px;
+}
+.box table td{
+	width: 40px;
+}
+.box table button{
+	width: 40px;
+	height: 40px;
+	border: 0;
+	background-color: #fff;
+}
+button:hover{
+	cursor: pointer;
+}
