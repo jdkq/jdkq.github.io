@@ -23,18 +23,21 @@
   <title>git提交文件篇 - Marcus</title>
 
   
-    <meta name="description" content="向服务器仓库提交文件 1.创建描述文档1touch README.md 2.添加文件12git add 文件名git add . 一键add 3.提交文件12git commit -m “提交文件说明”git remote add origin git@xx.xx.xx.xx:repos&#x2F;xxx&#x2F;xxx&#x2F;xxx.git 4.推送到远程仓库 普通推送：1git push  强行推送：1git pus">
+    <meta name="description" content="向服务器仓库提交文件  早期用SVN的比较多，但随着Git的推出，SVN的用户群体逐渐减少了，原因在于Git 有很多更强大的功能，特别是针对软件程序管理的强大功能。 原理git提交原理对比svn提交 1. Git是分布式的，SVN是集中式的 这是 Git 和 SVN 最大的区别。若能掌握这个概念，两者区别基本搞懂大半。因为 Git 是分布式的，所以 Git 支持离线工作，在本地可以进行很多操作，包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git提交文件篇">
 <meta property="og:url" content="https://bba1.site/posts/870bc40.html">
 <meta property="og:site_name" content="Marcus">
-<meta property="og:description" content="向服务器仓库提交文件 1.创建描述文档1touch README.md 2.添加文件12git add 文件名git add . 一键add 3.提交文件12git commit -m “提交文件说明”git remote add origin git@xx.xx.xx.xx:repos&#x2F;xxx&#x2F;xxx&#x2F;xxx.git 4.推送到远程仓库 普通推送：1git push  强行推送：1git pus">
+<meta property="og:description" content="向服务器仓库提交文件  早期用SVN的比较多，但随着Git的推出，SVN的用户群体逐渐减少了，原因在于Git 有很多更强大的功能，特别是针对软件程序管理的强大功能。 原理git提交原理对比svn提交 1. Git是分布式的，SVN是集中式的 这是 Git 和 SVN 最大的区别。若能掌握这个概念，两者区别基本搞懂大半。因为 Git 是分布式的，所以 Git 支持离线工作，在本地可以进行很多操作，包">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-4ccfc6cae306aacf7c14babad5aa9a20_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-7937d552de22fc0c77de49826844b5bd_r.jpg">
 <meta property="article:published_time" content="2020-03-12T03:17:36.000Z">
-<meta property="article:modified_time" content="2023-11-01T08:03:03.937Z">
+<meta property="article:modified_time" content="2023-11-03T08:03:43.442Z">
 <meta property="article:author" content="Marcus">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-4ccfc6cae306aacf7c14babad5aa9a20_r.jpg">
   
   
   
@@ -81,7 +84,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">git提交文件篇</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%8F%8F%E8%BF%B0%E6%96%87%E6%A1%A3"><span class="toc-text">1.创建描述文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="toc-text">2.添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6"><span class="toc-text">3.提交文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">4.推送到远程仓库</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">git提交文件篇</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%8F%8F%E8%BF%B0%E6%96%87%E6%A1%A3"><span class="toc-text">1.创建描述文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="toc-text">2.添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6"><span class="toc-text">3.提交文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">4.推送到远程仓库</span></a></li></ol></div></div></widget>
 
 
 
@@ -102,6 +105,32 @@
 <article class='md-text content post'>
 <h1 class="article-title"><span>git提交文件篇</span></h1>
 <div class="tag-plugin quot"><p class="content" type="text">向服务器仓库提交文件</p></div>
+
+<p>早期用SVN的比较多，但随着Git的推出，SVN的用户群体逐渐减少了，原因在于Git 有很多更强大的功能，特别是针对软件程序管理的强大功能。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><div class="tag-plugin tabs" align="center"id="tab_1"><div class="nav-tabs"><div class="tab active"><a href="#tab_1-1">git提交原理</a></div><div class="tab"><a href="#tab_1-2">对比svn提交</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_1-1"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic1.zhimg.com/v2-4ccfc6cae306aacf7c14babad5aa9a20_r.jpg" fancybox="true"/></div></div>
+1. Git是分布式的，SVN是集中式的
+这是 Git 和 SVN 最大的区别。若能掌握这个概念，两者区别基本搞懂大半。因为 Git 是分布式的，所以 Git 支持离线工作，在本地可以进行很多操作，包括接下来将要重磅推出的分支功能。而 SVN 必须联网才能正常工作。
+2. Git复杂概念多，SVN简单易上手
+所有同时掌握 Git 和 SVN 的开发者都必须承认，Git 的命令实在太多了，日常工作需要掌握 add, commit, status, fetch, push, rebase等，若要熟练掌握，还必须掌握 rebase和 merge的区别， fetch和 pull的区别等，除此之外，还有 cherry-pick， submodule， stash等功能，仅是这些名词听着都很绕。
+3. Git分支廉价，SVN分支昂贵
+
+<p>在版本管理里，分支是很常使用的功能。在发布版本前，需要发布分支，进行大需求开发，需要 feature 分支，大团队还会有开发分支，稳定分支等。在大团队开发过程中，常常存在创建分支，切换分支的需求。</p>
+<p>Git 分支是指针指向某次提交，而 SVN 分支是拷贝的目录。这个特性使 Git 的分支切换非常迅速，且创建成本非常低。</p>
+<p>而且 Git 有本地分支，SVN 无本地分支。在实际开发过程中，经常会遇到有些代码没写完，但是需紧急处理其他问题，若我们使用 Git，便可以创建本地分支存储没写完的代码，待问题处理完后，再回到本地分支继续完成代码。</p></div><div class="tab-pane" id="tab_1-2"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic2.zhimg.com/v2-7937d552de22fc0c77de49826844b5bd_r.jpg" fancybox="true"/></div></div>
+2023年8月份的时候就放弃win7/8系统支持git,只能利用svn进行提交，但需联网</div></div></div>
+
+<p>Git 最核心的一个概念就是工作流。</p>
+<ul>
+<li>工作区(Workspace)是电脑中实际的目录。</li>
+<li>暂存区(Index)类似于缓存区域，临时保存你的改动。</li>
+<li>仓库区(Repository)，分为本地仓库和远程仓库。</li>
+</ul>
+<p>通常提交代码分为几步：</p>
+<ol>
+<li>git add从工作区提交到暂存区</li>
+<li>git commit从暂存区提交到本地仓库</li>
+<li>git push或git svn dcommit从本地仓库提交到远程仓库</li>
+</ol>
 <h2 id="1-创建描述文档"><a href="#1-创建描述文档" class="headerlink" title="1.创建描述文档"></a>1.创建描述文档</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> README.md</span><br></pre></td></tr></table></figure>
 <h2 id="2-添加文件"><a href="#2-添加文件" class="headerlink" title="2.添加文件"></a>2.添加文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br><span class="line">git add . 一键add</span><br></pre></td></tr></table></figure>
 <h2 id="3-提交文件"><a href="#3-提交文件" class="headerlink" title="3.提交文件"></a>3.提交文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m “提交文件说明”</span><br><span class="line">git remote add origin git@xx.xx.xx.xx:repos/xxx/xxx/xxx.git</span><br></pre></td></tr></table></figure>
@@ -112,7 +141,10 @@
 <blockquote>
 <p>注意如果这一步报错就说明README.md文件没在本地，需要合并一下</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">git pull --rebase origin master
+```https://pic2.zhimg.com/v2-7937d552de22fc0c77de49826844b5bd_r.jpg
+</code></pre>
+
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
