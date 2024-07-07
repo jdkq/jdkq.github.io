@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">品牌列表</h3>
+				</div>
+				<div class="panel-body form-inline">
+
+					<!-- <label>ID:<input type="text" name="" class="form-control" v-model="id"></label> -->
+
+					<label>Name:<input type="text" name="" class="form-control" v-model="name" @keyup.enter="add"></label>
+
+					<!-- 在vue中使用事件绑定机制处理函数的时候 加()可以传参 -->
+
+					<input type="button" name="" value="添加" class="btn btn-primary" @click="add">
+
+				</div>
+			</div>
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>名称</th>
+						<th>操作时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- 之前 v-for 中的数据能够直接在data list 中直接渲染过来 -->
+					<!-- 现在，定义一个search方法，把关键字传参形式传递search方法 -->
+					<!-- 把搜索key返回重新定义list 的data数组 -->
+					<tr v-for="item in list" :key="item.id">
+						<td>{{item.id}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.ctime | dateFormat}}</td>
+						<td>
+							<!-- 阻止默认行为,不刷新 .prevent -->
+							<a href="" @click.prevent="del(item.id)">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript">
+			// 如果我们通过全局配置了请求的数据接口，则在每次单独发起http请求，请求的url路径要以相对路径开头，前面不能带/ ,否则不会启动请求根路径拼接
+			Vue.http.options.root="https://asdsa.top/"
+			// 全局启动emulateJSON
+			Vue.http.options.emulateJSON = true
+			Vue.http.options.emulateHTTP = true
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					name: '',
+					keywords: '',
+					list:[
+						{id : 1,name: '奔驰',ctime: new Date()}
+					]
+				},
+				methods:{					
+					getAllList(){
+						 // 由于已经导入	vue-resourse，可以直接通过this.$http 来发起数据请求
+
+						 // 根据api文档，获取列表，发起get请求
+						 // this.$http.get('url').then(function(result){})
+						 // 当通过then 拿到回调函数服务器返回的result
+						 // 先判断 result.status 是否等于0，如果等于0，就成功了，可以把result.body.message 赋值给this.list. 不等于零弹窗
+						 this.$http.get('file/getprodlist.json').then(result=>{
+						 	var result = result.body
+						 	if (result.status===0) {
+						 		this.list = result.message
+
+						 	}else{
+						 		alert('获取数据失败！')
+						 	}
+						 })
+					},
+					add:function(){
+						// 查看数据API接口需要发送post请求,this.$http.post(url,body,option)
+						// body: {name:this.name}
+						// config: 表单数据类型提交方法，{emulateJSON:true}以普通表单提交到服务器 application/x-www-form-urlencoded
+						// .then回调，拿到成功结果调用result.body
+						this.$http.get('file/addproduct.json').then(result=>{
+							var result = result.body
+								if(result.status===0){
+									console.log(result)
+									// 添加成功调用getAllList刷新列表
+									this.getAllList()
+									// 清空name
+									this.name =""   
+								}else{
+									alert('添加数据失败')
+								}
+						})
+					},
+					del:function(){
+						// 删除品牌
+						this.$http.get('file/delproduct.json').then(result=>{
+							if (result.status===0) {
+								this.getAllList()
+							}else{
+								alert('删除失败！')
+							}
+						})
+					}
+					
+				},
+				created(){
+					this.getAllList()
+				},
+				filters:{
+					dateFormat: function(dataStr,pattern){
+						// 根据给定的字符串给出特定的时间
+						var dt = new Date(dataStr)
+
+						// yyyy-mm-dd
+						var y = dt.getFullYear()
+
+
+						// 月|日|十|分|秒  存在 单 位数，需要用es6字符串组合补位 .padStart(length,value)
+						var m = (dt.getMonth()+1).toString().padStart(2,'0')
+						var d = (dt.getDate()).toString().padStart(2,'0')
+						// return y+'-'+m+'-'+'d'
+
+						if (pattern && pattern.toLowerCase()==='yyyy-mm-dd') {
+							return `${y}-${m}-${d}`
+						}
+						else{
+							var hh = (dt.getHours()).toString().padStart(2,'0')
+							var mm = (dt.getMinutes()).toString().padStart(2,'0')
+							var ss = (dt.getSeconds()).toString().padStart(2,'0')
+							return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+						}
+					}
+			},
+			})
+		</script>
+	</body>
+</html>

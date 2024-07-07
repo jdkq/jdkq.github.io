@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>计算器</title>
+	<style type="text/css">
+		#show{
+			width: 310px;
+			height: 450px;
+			border:2px solid #000;
+			border-radius: 10px;
+			margin: auto;
+			margin-top:100px;
+			text-align: center;
+			background: gray;
+			}
+		input[type=text]{
+			margin-top: 20px;
+			width: 280px;
+			height: 30px;
+			font-size: 20px;
+			text-align: center;
+			font-weight: bold;
+
+		}
+		input[type=button]{
+			width: 60px;
+			height: 60px;
+			margin-top:15px;
+			margin-left: 3px;
+			margin-right: 3px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="show">
+		<input type="text" name="text" readonly="readonly" id="txt" value="0"><br>
+		<input type="button" name="btn" id="btn" value="CE" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="C" onclick="text(this)">		
+		<input type="button" name="btn" id="btn" value="<" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="+" onclick="text(this)"><br>
+		<input type="button" name="btn" id="btn" value="9" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="8" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="7" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="-" onclick="text(this)"><br>
+		<input type="button" name="btn" id="btn" value="6" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="5" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="4" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="*" onclick="text(this)"><br>
+		<input type="button" name="btn" id="btn" value="3" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="2" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="1" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="/" onclick="text(this)"><br>
+		<input type="button" name="btn" id="btn" value="%" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="0" onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="." onclick="text(this)">
+		<input type="button" name="btn" id="btn" value="=" onclick="text(this)">
+	</div>
+	<script type="text/javascript">		
+		function text(btn){
+			var num = btn.value;
+			switch(num){
+				case "CE":
+					document.getElementById('txt').value=null;
+					break;
+				case "C":
+					document.getElementById('txt').value=null;
+					break;
+				case "=":
+					document.getElementById('txt').value=eval(document.getElementById('txt').value);
+					break;
+				case "<":
+					num.length++;
+					document.getElementById('txt').value=num.substring(num[-1],num.length-1);
+					break;
+				default:
+					document.getElementById('txt').value = document.getElementById('txt').value + num;
+					break;
+
+			}
+
+		}
+		text();
+
+	</script>
+</body>
+</html>

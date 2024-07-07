@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>vue动画 - Marcus</title>
+
+  
+    <meta name="description" content="进入&#x2F;离开的过渡  共用 v-1234567891011121314&#x2F;*自定义两组样式控制transition 内部元素实现过渡动画 *&#x2F;&#x2F;* v-enter 进入前，元素起始状态 [时间点]*&#x2F;.v-enter,&#x2F;* v-leave-to 离开之后时间点*&#x2F;.v-leave-to&amp;#123;	opacity: 0;	transform: translate(200px);&amp;#125;&#x2F;* v-e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue动画">
+<meta property="og:url" content="https://bba1.site/posts/88bda290.html">
+<meta property="og:site_name" content="Marcus">
+<meta property="og:description" content="进入&#x2F;离开的过渡  共用 v-1234567891011121314&#x2F;*自定义两组样式控制transition 内部元素实现过渡动画 *&#x2F;&#x2F;* v-enter 进入前，元素起始状态 [时间点]*&#x2F;.v-enter,&#x2F;* v-leave-to 离开之后时间点*&#x2F;.v-leave-to&amp;#123;	opacity: 0;	transform: translate(200px);&amp;#125;&#x2F;* v-e">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cn.vuejs.org/images/transition.png">
+<meta property="article:published_time" content="2020-05-31T07:13:20.000Z">
+<meta property="article:modified_time" content="2023-11-01T08:04:58.177Z">
+<meta property="article:author" content="Marcus">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/transition.png">
+  
+  
+  
+  <meta name="keywords" content="Vue">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Marcus</div><div class="sub cap">每个人的独立博客💨</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">vue动画</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA"><span class="toc-text">演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA-1"><span class="toc-text">演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA-2"><span class="toc-text">演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA-3"><span class="toc-text">演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81-1"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA-4"><span class="toc-text">演示</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Vue/">Vue</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Vue/Vue%E5%8A%A8%E7%94%BB/">Vue动画</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-05-31T07:13:20.000Z">2020-05-31</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>vue动画</span></h1>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cn.vuejs.org/images/transition.png" alt="进入/离开的过渡" fancybox="true"/></div><div class="image-meta"><span class="image-caption center">进入/离开的过渡</span></div></div>
+
+<h1 id="共用-v"><a href="#共用-v" class="headerlink" title="共用 v-"></a>共用 v-</h1><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*自定义两组样式控制transition 内部元素实现过渡动画 */</span></span><br><span class="line"><span class="comment">/* v-enter 进入前，元素起始状态 [时间点]*/</span></span><br><span class="line">.v-enter,</span><br><span class="line"><span class="comment">/* v-leave-to 离开之后时间点*/</span></span><br><span class="line">.v-leave-to&#123;</span><br><span class="line">	opacity: <span class="number">0</span>;</span><br><span class="line">	transform: translate(<span class="number">200</span>px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* v-enter-active [入场动画时间段]*/</span></span><br><span class="line"><span class="comment">/* v-leave-active [离场动画时间段]*/</span></span><br><span class="line">.v-enter-active,</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">	transition: all <span class="number">0.4</span>s ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>需求: 使用过度类名实现动画点击h3显示，再点击隐藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;toggle&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;flag=!flag&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 使用transtion 元素把需要的被动画控制的元素 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span>这是一个h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;toggle2&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;flag2=!flag2&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 使用transtion 元素把需要的被动画控制的元素 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h6</span> <span class="attr">v-if</span>=<span class="string">&quot;flag2&quot;</span>&gt;</span>这是一个h6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">transition</span>&gt;</span>		</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">flag</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">flag2</span>: <span class="literal">false</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>:&#123;&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><iframe src="/file/vue动画.html" scrolling="false" width="100%" height="300px" frameborder="0"></iframe>
+
+
+<h1 id="自定义v-前缀"><a href="#自定义v-前缀" class="headerlink" title="自定义v-前缀"></a>自定义v-前缀</h1><blockquote>
+<p>注意：添加两组transition类区别有无name属性</p>
+</blockquote>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* v-enter 进入前，元素起始状态 [时间点]*/</span></span><br><span class="line">.v-enter,</span><br><span class="line"><span class="comment">/* v-leave-to 离开之后时间点*/</span></span><br><span class="line">.v-leave-to&#123;</span><br><span class="line">	opacity: <span class="number">0</span>;</span><br><span class="line">	transform: translateX(<span class="number">200</span>px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* v-enter-active [入场动画时间段]*/</span></span><br><span class="line"><span class="comment">/* v-leave-active [离场动画时间段]*/</span></span><br><span class="line">.v-enter-active,</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">	transition: all <span class="number">0.4</span>s ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* v-enter 进入前，元素起始状态 [时间点]*/</span></span><br><span class="line">.my-enter,</span><br><span class="line"><span class="comment">/* v-leave-to 离开之后时间点*/</span></span><br><span class="line">.my-leave-to&#123;</span><br><span class="line">	opacity: <span class="number">0</span>;</span><br><span class="line">	transform: translateY(<span class="number">200</span>px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* v-enter-active [入场动画时间段]*/</span></span><br><span class="line"><span class="comment">/* v-leave-active [离场动画时间段]*/</span></span><br><span class="line">.my-enter-active,</span><br><span class="line">.my-leave-active&#123;</span><br><span class="line">	transition: all <span class="number">0.4</span>s ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>需求: 使用过度类名实现动画实现 上面按钮从右向左 下面从下到上<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;toggle&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;flag=!flag&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 使用transtion 元素把需要的被动画控制的元素 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span>这是一个h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;toggle2&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;flag2=!flag2&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 使用transtion 元素把需要的被动画控制的元素 --&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 注意：name=&quot;my&quot; --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">&quot;my&quot;</span>&gt;</span>  </span><br><span class="line">		<span class="tag">&lt;<span class="name">h6</span> <span class="attr">v-if</span>=<span class="string">&quot;flag2&quot;</span>&gt;</span>这是一个h6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">flag</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">flag2</span>: <span class="literal">false</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>:&#123;&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="演示-1"><a href="#演示-1" class="headerlink" title="演示"></a>演示</h2><iframe src="/file/自定义v-前缀.html" scrolling="false" width="100%" height="300px" frameborder="0"></iframe>
+
+<h1 id="第三方动态库实现动画"><a href="#第三方动态库实现动画" class="headerlink" title="第三方动态库实现动画"></a>第三方动态库实现动画</h1><blockquote>
+<p>如：<a target="_blank" rel="noopener" href="https://animate.style/">https://animate.style/</a></p>
+</blockquote>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/animate.css@3.5.1&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example-3&quot;</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;flag = !flag&quot;</span>&gt;</span></span><br><span class="line">	    toggle</span><br><span class="line">	  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">	    <span class="attr">name</span>=<span class="string">&quot;custom-classes-transition&quot;</span></span></span><br><span class="line"><span class="tag">	    <span class="attr">enter-active-class</span>=<span class="string">&quot;animated tada&quot;</span></span></span><br><span class="line"><span class="tag">	    <span class="attr">leave-active-class</span>=<span class="string">&quot;animated bounceOutRight&quot;</span></span></span><br><span class="line"><span class="tag">	  &gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;flag&quot;</span>&gt;</span>Animate.css<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#example-3&#x27;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">flag</span>: <span class="literal">false</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>:&#123;&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="演示-2"><a href="#演示-2" class="headerlink" title="演示"></a>演示</h2><iframe src="/file/animate.html"  width="100%" height="300px" frameborder="0"></iframe>
+
+
+<h1 id="半场动画（例如加入购物车）【借助于-函数】"><a href="#半场动画（例如加入购物车）【借助于-函数】" class="headerlink" title="半场动画（例如加入购物车）【借助于  函数】"></a>半场动画（例如加入购物车）【借助于  函数】</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:before-enter</span>=<span class="string">&quot;beforeEnter&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:enter</span>=<span class="string">&quot;enter&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:after-enter</span>=<span class="string">&quot;afterEnter&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:enter-cancelled</span>=<span class="string">&quot;enterCancelled&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:before-leave</span>=<span class="string">&quot;beforeLeave&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:leave</span>=<span class="string">&quot;leave&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:after-leave</span>=<span class="string">&quot;afterLeave&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:leave-cancelled</span>=<span class="string">&quot;leaveCancelled&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="演示-3"><a href="#演示-3" class="headerlink" title="演示"></a>演示</h2><p><a href="/file/%E9%92%A9%E5%AD%90%E5%B0%8F%E7%90%83%E5%8A%A8%E7%94%BB.html">钩子小球动画</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">	color: <span class="meta">#fff;</span></span><br><span class="line">	background-color: <span class="meta">#000</span></span><br><span class="line">&#125;</span><br><span class="line">.ball&#123;</span><br><span class="line">	width: <span class="number">15</span>px;</span><br><span class="line">	height: <span class="number">15</span>px;</span><br><span class="line">	background-color: red;</span><br><span class="line">	border-radius: <span class="number">50</span>%</span><br><span class="line">&#125;</span><br><span class="line">input[type=<span class="string">&quot;button&quot;</span>]:hover&#123;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;快到碗里来&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;flag=!flag&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 使用transtion包裹元素 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">		@<span class="attr">before-enter</span>=<span class="string">&quot;beforeEnter&quot;</span></span></span><br><span class="line"><span class="tag">		@<span class="attr">enter</span>=<span class="string">&quot;enter&quot;</span></span></span><br><span class="line"><span class="tag">		@<span class="attr">after-enter</span>=<span class="string">&quot;afterEnter&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ball&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;flag&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute;left: 120px;top: 500px&quot;</span>&gt;</span>“形象”的碗<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">flag</span>: <span class="literal">false</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>:&#123;</span><br><span class="line">		<span class="comment">// el:表示要执行动画的那个元素是个原生的js DOM对象</span></span><br><span class="line">		<span class="comment">// el是通过 document.getElmentById(&#x27;&#x27;) 获取的DOM对象</span></span><br><span class="line">		<span class="attr">beforeEnter</span>:<span class="keyword">function</span> (<span class="params">el</span>) &#123;</span><br><span class="line">			<span class="comment">// 表示动画入场之前，此时动画尚未开始，可以在beforeEnter 中设置动画开始之前的其实样式</span></span><br><span class="line">			<span class="comment">// 设置小球起始位置</span></span><br><span class="line">			el.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">&quot;translate(0,0)&quot;</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">enter</span>: <span class="keyword">function</span> (<span class="params">el,done</span>)&#123;</span><br><span class="line">			<span class="comment">// 这句话没有实际作用，如果不写没有实际效果</span></span><br><span class="line">			<span class="comment">// 可以el.offsetWidth会强制浏览器刷新</span></span><br><span class="line">			el.<span class="property">offsetWidth</span></span><br><span class="line">			<span class="comment">// 表示动画开始之后的样式，这里可以设置小球完成动画的结束状态</span></span><br><span class="line">			el.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">&quot;translate(150px,450px)&quot;</span></span><br><span class="line">			el.<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&quot;all 1s ease&quot;</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// 这里的回调done函数 ，其实就是 afterEnter 这个函数，也就是说done是afterEnter的引用</span></span><br><span class="line">			<span class="title function_">done</span>()</span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">afterEnter</span>: <span class="keyword">function</span> (<span class="params">el</span>)&#123;</span><br><span class="line">			<span class="comment">// 动画完成之后</span></span><br><span class="line">			<span class="comment">// 这句话 ：第一个功能：控制小球的显示与隐藏</span></span><br><span class="line">			<span class="comment">// 第二个功能： 直接跳过后半场动画，让flag 变成false</span></span><br><span class="line">			<span class="comment">// 当第二次点击， flag:false -&gt; true</span></span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">flag</span> = !<span class="variable language_">this</span>.<span class="property">flag</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">// el.style.opacity=0</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// Vue 把一个完整的动画使用钩子函数拆分成了两部分</span></span><br><span class="line">			<span class="comment">// 我们使用 flag 标识符表示动画的切换</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// flag = flase -&gt; true -&gt;false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="transition-group-列表动画"><a href="#transition-group-列表动画" class="headerlink" title="transition-group 列表动画"></a>transition-group 列表动画</h1><h2 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">	padding: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line">li&#123;</span><br><span class="line">	width: <span class="number">100</span>%;</span><br><span class="line">	list-style-type: none;</span><br><span class="line">	border: <span class="number">1</span>px dashed <span class="meta">#999;</span></span><br><span class="line">	padding: <span class="number">8</span>px;</span><br><span class="line">	line-height: <span class="number">35</span>px;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">li:hover&#123;</span><br><span class="line">	background-color: pink;</span><br><span class="line">	transition: all <span class="number">0.4</span>s ease</span><br><span class="line">&#125;</span><br><span class="line">.v-enter,</span><br><span class="line">.v-leave-to&#123;</span><br><span class="line">	opacity: <span class="number">0</span>;</span><br><span class="line">	transform: translateY(<span class="number">80</span>px);</span><br><span class="line">&#125;</span><br><span class="line">.v-enter-active,</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">	transition: all <span class="number">0.8</span>s ease</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	下面的.move 和 .v-leave-active 配合使用，能够实现列表后续的元素，渐渐的飘上来的效果</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">.v-move&#123;</span><br><span class="line">	transition: all <span class="number">0.8</span>s ease</span><br><span class="line">&#125;</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">			ID:</span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;id&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">			Name:</span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;name&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;添加&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 在实现列表过度的时候，如果需要过度元素，是通过v-for 循环渲染出来的，需要用transition包裹 所以使用transitionGroup --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 如果要给 v-for 循环创建元素动画，必须为每一个元素设置:key --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>奸臣一表：【点击删除】<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">appear</span> <span class="attr">tag</span>=<span class="string">&quot;ul&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in list&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;del(item.id)&quot;</span>&gt;</span></span><br><span class="line">				&#123;&#123;item.id&#125;&#125; ---- &#123;&#123;item.name&#125;&#125;</span><br><span class="line">			<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">	<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	<span class="attr">data</span>:&#123;</span><br><span class="line">		<span class="attr">id</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">		<span class="attr">list</span>:[</span><br><span class="line">			&#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">name</span>:<span class="string">&#x27;赵高&#x27;</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">id</span>:<span class="number">2</span>,<span class="attr">name</span>:<span class="string">&#x27;魏忠贤&#x27;</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">id</span>:<span class="number">3</span>,<span class="attr">name</span>:<span class="string">&#x27;脑补不出来&#x27;</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">id</span>:<span class="number">4</span>,<span class="attr">name</span>:<span class="string">&#x27;你们来吧&#x27;</span>&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">methods</span>:&#123;</span><br><span class="line">		<span class="attr">add</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">push</span>(&#123;<span class="attr">id</span>:<span class="variable language_">this</span>.<span class="property">id</span>,<span class="attr">name</span>:<span class="variable language_">this</span>.<span class="property">name</span>&#125;)</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">id</span> = <span class="variable language_">this</span>.<span class="property">name</span> =<span class="string">&#x27;&#x27;</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">del</span>:<span class="keyword">function</span>(<span class="params">id</span>)&#123;</span><br><span class="line">			<span class="keyword">var</span> index = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">findIndex</span>(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">				<span class="keyword">if</span> (item.<span class="property">id</span> == id) &#123;</span><br><span class="line">					<span class="comment">//在数组的some方法中,如果return true,就会立刻终止这个数组循环</span></span><br><span class="line">					<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">splice</span>(index,<span class="number">1</span>)</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="演示-4"><a href="#演示-4" class="headerlink" title="演示"></a>演示</h2><iframe src="/file/list动画.html"  width="100%" height="400px" frameborder="0"></iframe>
+
+
+<p><strong>注意：我们发现 <code>transition-group</code> 渲染成一个span标签，span标签内包含v-for 遍历的list数组，不符合<code>w3c</code>的行内元素不能包裹块状元素的原则，所以需要给<code>transition-group</code> 加一个tag属性渲染<code>ul</code>,若不指定默认渲染为<code>span</code>。</strong></p>
+
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/dd3b78a2.html">vue组件</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/ed597b90.html">Vue品牌列表</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
