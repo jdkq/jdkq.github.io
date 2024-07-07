@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<script src="https://unpkg.com/vue-router@3.0.0/dist/vue-router.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<router-link to="/login">登录</router-link>
+			<router-link to="/register">注册</router-link>
+			<!-- 
+				需求：监听路由改变做出反应
+			 -->
+			<router-view></router-view>
+		</div>
+		<script type="text/javascript">
+			const login = {
+				template:'<h4>这是登录组件，这个组件是爸爸我开发的</h4>'
+			}
+			const register = {
+				template:'<h4>这是注册组件，这个组件是某某开发的</h4>'
+			}
+			const router = new VueRouter({
+				routes:[
+					{path:'/',component:login},
+					{path:'/login',component: login},
+					{path:'/register',component: register}
+				]
+			})
+			var vm = new Vue({
+				el:'#app',
+				data:{
+
+				},
+				methods:{},
+				router:router,
+				watch:{
+					'$route.path':function(newVal,oldVal){
+						// console.log(newVal+'-'+oldVal)
+						if (newVal==="/login") {
+							alert('欢迎进入登录页面^-^')
+						}else if(newVal === '/register'){
+							alert('欢迎进入注册页面^-^')
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

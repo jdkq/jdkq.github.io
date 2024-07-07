@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<input type="button" name="" @click="flag=!flag" value="toggle">
+	<h3 v-if="flag">这是一个v-if控制的元素</h3>
+	<h3 v-show="flag">这是使用v-show控制的元素</h3>
+</div>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			flag: false
+		}
+	})
+</script>
+</body>
+</html>

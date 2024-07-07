@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Stellar主题语法 - Marcus</title>
+
+  
+    <meta name="description" content="emoji标签源码效果展示1234&amp;#123;% emoji 爱你 %&amp;#125;&amp;#123;% emoji blobcat ablobcatrainbow %&amp;#125;&amp;#123;% emoji blobcat ablobcatattentionreverse %&amp;#125;&amp;#123;% emoji tieba 滑稽 %&amp;#125;   配置文件文件名用$&amp;#123;name&amp;#125;代替">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stellar主题语法">
+<meta property="og:url" content="https://bba1.site/posts/1fd92ba7.html">
+<meta property="og:site_name" content="Marcus">
+<meta property="og:description" content="emoji标签源码效果展示1234&amp;#123;% emoji 爱你 %&amp;#125;&amp;#123;% emoji blobcat ablobcatrainbow %&amp;#125;&amp;#123;% emoji blobcat ablobcatattentionreverse %&amp;#125;&amp;#123;% emoji tieba 滑稽 %&amp;#125;   配置文件文件名用$&amp;#123;name&amp;#125;代替">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/cdn-x/emoji/qq/%E7%88%B1%E4%BD%A0.gif">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatrainbow.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/cdn-x/emoji/tieba/%E6%BB%91%E7%A8%BD.png">
+<meta property="og:image" content="https://xaoxuu.com/assets/wiki/stellar/photos/183e71e0ad995.jpg">
+<meta property="og:image" content="https://xaoxuu.com/assets/wiki/stellar/photos/bc7bda18328da.jpg">
+<meta property="og:image" content="https://img0.baidu.com/it/u=31487413,442391827&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500">
+<meta property="og:image" content="https://img2.baidu.com/it/u=925686306,4047937547&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500">
+<meta property="og:image" content="https://bu.dusays.com/2022/10/24/63567d3e07da3.png">
+<meta property="og:image" content="https://img1.baidu.com/it/u=676729016,138144393&fm=253&fmt=auto&app=138&f=PNG?w=889&h=500">
+<meta property="og:image" content="https://github-readme-stats.xaoxuu.com/api/?username=Marcus&&show_owner=true">
+<meta property="og:image" content="https://github-readme-stats.xaoxuu.com/api/pin/?username=jdkq&repo=Web&theme=dark&show_owner=true">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png">
+<meta property="og:image" content="https://img1.baidu.com/it/u=676729016,138144393&fm=253&fmt=auto&app=138&f=PNG?w=889&h=500">
+<meta property="og:image" content="https://images.unsplash.com/photo-1625171515821-1870deb2743b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80">
+<meta property="og:image" content="https://images.unsplash.com/photo-1528283648649-33347faa5d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80">
+<meta property="og:image" content="https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80">
+<meta property="og:image" content="https://images.unsplash.com/photo-1524797905120-92940d3a18d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80">
+<meta property="article:published_time" content="2023-10-28T15:56:30.000Z">
+<meta property="article:modified_time" content="2023-11-02T10:24:04.000Z">
+<meta property="article:author" content="Marcus">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/cdn-x/emoji/qq/%E7%88%B1%E4%BD%A0.gif">
+  
+  
+  
+  <meta name="keywords" content="hexo">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Marcus</div><div class="sub cap">每个人的独立博客💨</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Stellar主题语法</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#emoji%E6%A0%87%E7%AD%BE"><span class="toc-text">emoji标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mark-%E8%A1%8C%E5%86%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0"><span class="toc-text">mark 行内文本标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tag-%E6%A0%87%E7%AD%BE"><span class="toc-text">tag 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#image-%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE"><span class="toc-text">image 图片标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%B0%BA%E5%AF%B8%E5%9B%BE%E7%89%87"><span class="toc-text">大尺寸图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E5%B0%BA%E5%AF%B8%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96"><span class="toc-text">小尺寸图片优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%BA%95%E8%89%B2%E5%9B%BE%E7%89%87"><span class="toc-text">有底色图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%BA%95%E8%89%B2%E5%9B%BE%E7%89%87"><span class="toc-text">无底色图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quot-%E5%BC%95%E7%94%A8"><span class="toc-text">quot 引用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E9%97%A8%E8%AF%9D%E9%A2%98"><span class="toc-text">热门话题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#note-%E5%A4%87%E6%B3%A8%E5%9D%97"><span class="toc-text">note 备注块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link-%E9%93%BE%E6%8E%A5%E5%8D%A1%E7%89%87"><span class="toc-text">link 链接卡片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#radio-%E5%8D%95%E9%80%89"><span class="toc-text">radio 单选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#checkbox-%E5%A4%8D%E9%80%89"><span class="toc-text">checkbox 复选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#navbar-%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-text">navbar 导航栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frame-%E8%AE%BE%E5%A4%87%E6%A1%86%E6%9E%B6"><span class="toc-text">frame 设备框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E4%BF%AE%E9%A5%B0%E6%A0%87%E7%AD%BE%E9%9B%86"><span class="toc-text">文本修饰标签集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-text">时间线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ghcard-%E5%8D%A1%E7%89%87"><span class="toc-text">ghcard 卡片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ablock-%E6%99%AE%E9%80%9A%E5%9D%97%E5%AE%B9%E5%99%A8"><span class="toc-text">ablock 普通块容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#folding-%E6%8A%98%E5%8F%A0%E5%AE%B9%E5%99%A8"><span class="toc-text">folding 折叠容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tabs-%E5%88%86%E6%A0%8F%E5%AE%B9%E5%99%A8-%E6%8B%86NEXT%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">tabs 分栏容器 (拆NEXT的效果)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#swiper-%E8%BD%AE%E6%92%AD%E5%AE%B9%E5%99%A8"><span class="toc-text">swiper 轮播容器</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/hexo/">hexo</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/hexo/Stellar%E8%AF%AD%E6%B3%95/">Stellar语法</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-10-28T15:56:30.000Z">2023-10-28</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Stellar主题语法</span></h1>
+<h2 id="emoji标签"><a href="#emoji标签" class="headerlink" title="emoji标签"></a>emoji标签</h2><div class="tag-plugin tabs" align="center"id="tab_3"><div class="nav-tabs"><div class="tab"><a href="#tab_3-1">源码</a></div><div class="tab active"><a href="#tab_3-2">效果展示</a></div></div><div class="tab-content"><div class="tab-pane" id="tab_3-1"><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">emoji</span> <span class="string">爱你</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">emoji</span> <span class="string">blobcat</span> <span class="string">ablobcatrainbow</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">emoji</span> <span class="string">blobcat</span> <span class="string">ablobcatattentionreverse</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">emoji</span> <span class="string">tieba</span> <span class="string">滑稽</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane active" id="tab_3-2"><p><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/emoji/qq/爱你.gif"/></span><br><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatrainbow.png"/></span><br><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png"/></span><br><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/emoji/tieba/滑稽.png"/></span></p></div></div></div>
+
+
+<p>配置文件文件名用<code>$&#123;name&#125;</code>代替</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tag_plugins:</span></span><br><span class="line">  <span class="attr">emoji:</span></span><br><span class="line">    <span class="attr">default:</span> <span class="string">https://gcore.jsdelivr.net/gh/cdn-x/emoji/qq/$&#123;name&#125;.gif</span></span><br><span class="line">    <span class="attr">twemoji:</span> <span class="string">https://gcore.jsdelivr.net/gh/twitter/twemoji/assets/svg/$&#123;name&#125;.svg</span></span><br><span class="line">    <span class="attr">qq:</span> <span class="string">https://gcore.jsdelivr.net/gh/cdn-x/emoji/qq/$&#123;name&#125;.gif</span></span><br><span class="line">    <span class="attr">aru:</span> <span class="string">https://gcore.jsdelivr.net/gh/cdn-x/emoji/aru-l/$&#123;name&#125;.gif</span></span><br><span class="line">    <span class="attr">tieba:</span> <span class="string">https://gcore.jsdelivr.net/gh/cdn-x/emoji/tieba/$&#123;name&#125;.png</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="mark-行内文本标记"><a href="#mark-行内文本标记" class="headerlink" title="mark 行内文本标记"></a>mark 行内文本标记</h2><div class="tag-plugin tabs" align="center"id="tab_4"><div class="nav-tabs"><div class="tab"><a href="#tab_4-1">演示效果</a></div><div class="tab active"><a href="#tab_4-2">源码</a></div></div><div class="tab-content"><div class="tab-pane" id="tab_4-1"><p>支持多彩标记，包括：<mark class="tag-plugin mark" color="dark">默认</mark> <mark class="tag-plugin mark" color="red">红</mark> <mark class="tag-plugin mark" color="orange">橙</mark> <mark class="tag-plugin mark" color="yellow">黄</mark> <mark class="tag-plugin mark" color="green">绿</mark> <mark class="tag-plugin mark" color="cyan">青</mark> <mark class="tag-plugin mark" color="blue">蓝</mark> <mark class="tag-plugin mark" color="purple">紫</mark> <mark class="tag-plugin mark" color="light">浅</mark> <mark class="tag-plugin mark" color="dark">深</mark> <mark class="tag-plugin mark" color="warning">警告</mark> <mark class="tag-plugin mark" color="error">错误</mark> 一共 12 种颜色。</p></div><div class="tab-pane active" id="tab_4-2"><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">支持多彩标记,包括：&#123;%</span> <span class="string">mark</span> <span class="string">默认</span> <span class="string">%&#125;&#123;%</span> <span class="string">mark</span> <span class="string">红</span> <span class="string">color:red</span> <span class="string">%&#125;</span> &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">橙</span> <span class="string">color:orange</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">黄</span> <span class="string">color:yellow</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">绿</span> <span class="string">color:green</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">青</span> <span class="string">color:cyan</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">蓝</span> <span class="string">color:blue</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">紫</span> <span class="string">color:purple</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">浅</span> <span class="string">color:light</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">深</span> <span class="string">color:dark</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">警告</span> <span class="string">color:warning</span> <span class="string">%</span>&#125; &#123;<span class="string">%</span> <span class="string">mark</span> <span class="string">错误</span> <span class="string">color:error</span> <span class="string">%</span>&#125; <span class="string">一共</span> <span class="number">12</span> <span class="string">种颜色。</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+
+
+<p>可供选择文本标记color：red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error<br>格式：<code>&#123;% mark 文本 color:xxx %&#125;</code></p>
+<h2 id="tag-标签"><a href="#tag-标签" class="headerlink" title="tag 标签"></a>tag 标签</h2><p>这个效果类似于 mark 标签，但是更适合一批标签独占一行来使用，支持链接</p>
+<a class="tag-plugin tag" color="yellow" target="_blank" rel="noopener" href="https://www.ixigua.com/">西瓜视频</a>
+<a class="tag-plugin tag" color="blue" target="_blank" rel="noopener" href="https://www.lkcoffee.com/">瑞星咖啡官网</a>
+<p>如果没有指定颜色，且没有设置默认颜色，则随机取一个颜色</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">tag</span> <span class="string">西瓜视频</span> <span class="string">https://www.ixigua.com/</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">tag</span> <span class="string">瑞星咖啡官网</span> <span class="string">https://www.lkcoffee.com/</span> <span class="string">color:blue</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="image-图片标签"><a href="#image-图片标签" class="headerlink" title="image 图片标签"></a>image 图片标签</h2><p>图片标签是一个精心设计的应对各种尺寸插图的标签，对于大图，可以放置一个「下载」按钮，语法格式如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">src</span> [<span class="string">description</span>] [<span class="string">download:bool/string</span>] [<span class="string">width:px</span>] [<span class="string">padding:px</span>] [<span class="string">bg:hex</span>] <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+<mark class="tag-plugin mark" color="light">src:</mark> 地址 </br>
+<mark class="tag-plugin mark" color="light">description:</mark> 图片描述 </br>
+<mark class="tag-plugin mark" color="light">download:</mark> 下载地址 </br>
+<mark class="tag-plugin mark" color="light">width:</mark>  图片宽度 </br>
+<mark class="tag-plugin mark" color="light">padding:</mark> 16px 图片四周填充宽度 </br>
+<mark class="tag-plugin mark" color="light">bg:</mark> 图片区域背景色 </br>
+
+<h2 id="大尺寸图片"><a href="#大尺寸图片" class="headerlink" title="大尺寸图片"></a>大尺寸图片</h2><p>无论在什么宽度的设备上都希望横向铺满的图片，一般不需要额外操作。可以在链接后面写上图片描述，如有必要，可以通过设置 <code>download:true </code>使其显示一个「下载」按钮链接指向图片地址，如果下载链接与显示的图片地址不同，可以 <code>download:下载链接</code>来使其能够下载原图。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://xaoxuu.com/assets/wiki/stellar/photos/183e71e0ad995.jpg" alt="来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。" fancybox="true"/><a class="image-download blur" style="opacity:0" target="_blank" download="来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。href="https://xaoxuu.com/assets/wiki/stellar/photos/183e71e0ad995.jpg"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。</span></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://xaoxuu.com/assets/wiki/stellar/photos/bc7bda18328da.jpg" alt="来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。" fancybox="true"/><a class="image-download blur" style="opacity:0" target="_blank" download="来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。href="https://xaoxuu.com/assets/wiki/stellar/photos/bc7bda18328da.jpg"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。</span></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://xaoxuu.com/assets/wiki/stellar/photos/183e71e0ad995.jpg</span> <span class="string">来自印度的</span> <span class="string">Rohit</span> <span class="string">Vohra</span> <span class="string">使用</span> <span class="string">iPhone</span> <span class="number">12</span> <span class="string">Pro</span> <span class="string">Max</span> <span class="string">拍摄。</span> <span class="string">download:true</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://xaoxuu.com/assets/wiki/stellar/photos/bc7bda18328da.jpg</span> <span class="string">来自澳大利亚的</span> <span class="string">Pieter</span> <span class="string">de</span> <span class="string">Vries</span> <span class="string">使用</span> <span class="string">iPhone</span> <span class="number">12</span> <span class="string">Pro</span> <span class="string">Max</span> <span class="string">拍摄。</span> <span class="string">download:https://xaoxuu.com/assets/wiki/stellar/photos/bc7bda18328da.jpg</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小尺寸图片优化"><a href="#小尺寸图片优化" class="headerlink" title="小尺寸图片优化"></a>小尺寸图片优化</h2><h3 id="有底色图片"><a href="#有底色图片" class="headerlink" title="有底色图片"></a>有底色图片</h3><div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img0.baidu.com/it/u=31487413,442391827&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" fancybox="true" style="width:600px;"/></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://img0.baidu.com/it/u=31487413</span>,<span class="number">442391827</span><span class="string">&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500</span>  <span class="string">width:200px</span> <span class="string">padding:16px</span> <span class="string">bg:white</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="无底色图片"><a href="#无底色图片" class="headerlink" title="无底色图片"></a>无底色图片</h3><p>没有底色的图片，可以填充 <code>bg:var(--card)</code>动态颜色，能够适配暗黑模式</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:var(--card);padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img2.baidu.com/it/u=925686306,4047937547&fm=253&fmt=auto&app=138&f=JPEG?w=825&h=500" fancybox="true"/></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">image</span>  <span class="string">https://img2.baidu.com/it/u=925686306</span>,<span class="number">4047937547</span><span class="string">&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=825&amp;h=500</span> <span class="string">width:200px</span> <span class="string">padding:16px</span> <span class="string">bg:white</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="quot-引用"><a href="#quot-引用" class="headerlink" title="quot 引用"></a>quot 引用</h2><p>适合居中且醒目的引用：</p>
+<div class="tag-plugin quot"><p class="content" type="text">我是这世界最帅的男人</p></div>
+
+<p>支持自定义的引号：</p>
+<div class="tag-plugin quot"><p class="content" type="icon"><img class="icon prefix lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2022/10/24/63567d3e07da3.png" />热门话题</p></div>
+
+<p>特别引用：可以当标题用</p>
+<div class="tag-plugin quot"><h3 class="content" id="热门话题" type="text"><a href="#热门话题" class="headerlink" title="热门话题"></a>热门话题</h3></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">适合居中且醒目的引用：</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">quot</span> <span class="string">Stellar</span> <span class="string">是最好用的主题</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">支持自定义引号：</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">quot</span> <span class="string">热门话题</span> <span class="string">icon:hashtag</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">特别引用：可以当标题用</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">quot</span> <span class="string">热门话题</span> <span class="string">el:h3</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="note-备注块"><a href="#note-备注块" class="headerlink" title="note 备注块"></a>note 备注块</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">note</span> [<span class="string">title</span>] <span class="string">content</span> [<span class="string">color:color</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="comment"># title: 标题（可选）</span></span><br><span class="line"><span class="comment"># content: 内容</span></span><br><span class="line"><span class="comment"># color: red/orange/yellow/green/cyan/blue/purple/light/dark/warning/error</span></span><br></pre></td></tr></table></figure>
+<div class="tag-plugin note" ><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="red"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="orange"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="yellow"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="green"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="cyan"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="blue"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="purple"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="light"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="dark"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="warning"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+<div class="tag-plugin note" color="error"><div class="title">一共支持12种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、light、dark、warning、error 几种取值。</p></div></div>
+
+<h2 id="link-链接卡片"><a href="#link-链接卡片" class="headerlink" title="link 链接卡片"></a>link 链接卡片</h2><p>不带摘要的样式：</p>
+<div class="tag-plugin link dis-select"><a class="link-card plain" title="" href="https://xaoxuu.com/blog/20221029/" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="title,icon"><div class="left"><span class="title">https://xaoxuu.com/blog/20221029/</span><span class="cap link fs12">https://xaoxuu.com/blog/20221029/</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/link/8f277b4ee0ecd.svg"></div></div></a></div>
+<p>带摘要的样式：</p>
+<div class="tag-plugin link dis-select"><a class="link-card rich" title="" href="https://xaoxuu.com/blog/20221029/" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="title,icon,desc"><div class="top"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/link/8f277b4ee0ecd.svg"></div><span class="cap link fs12">https://xaoxuu.com/blog/20221029/</span></div><div class="bottom"><span class="title">https://xaoxuu.com/blog/20221029/</span><span class="cap desc fs12"></span></div></a></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">link</span> <span class="string">href</span> [<span class="string">title</span>] [<span class="string">icon:src</span>] [<span class="string">desc:true/false</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="comment"># href: 链接</span></span><br><span class="line"><span class="comment"># title: 可选，手动设置标题（为空时会自动抓取页面标题）</span></span><br><span class="line"><span class="comment"># icon: 可选，手动设置图标（为空时会自动抓取页面图标）</span></span><br><span class="line"><span class="comment"># desc: 可选，是否显示摘要描述，为true时将会显示页面描述</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="radio-单选"><a href="#radio-单选" class="headerlink" title="radio 单选"></a>radio 单选</h2><div class="tag-plugin checkbox" ><input type="radio"/><span>没有勾选的单选框</span></div>
+<div class="tag-plugin checkbox" ><input type="radio" checked="true"/><span>已勾选的单选框</span></div>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">radio</span> <span class="string">没有勾选的单选框</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">radio</span> <span class="string">checked:true</span> <span class="string">已勾选的单选框</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="comment"># checked: true/false</span></span><br><span class="line"><span class="comment"># color: red/orange/yellow/green/cyan/blue/purple</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="checkbox-复选"><a href="#checkbox-复选" class="headerlink" title="checkbox 复选"></a>checkbox 复选</h2><div class="tag-plugin checkbox" ><input type="checkbox"/><span>普通的没有勾选的复选框</span></div>
+<div class="tag-plugin checkbox" ><input type="checkbox" checked="true"/><span>普通的已勾选的复选框</span></div>
+<div class="tag-plugin checkbox" color="green" symbol="plus"><input type="checkbox" checked="true"/><span>显示为加号的绿色的已勾选的复选框</span></div>
+<div class="tag-plugin checkbox" color="yellow" symbol="minus"><input type="checkbox" checked="true"/><span>显示为减号的黄色的已勾选的复选框</span></div>
+<div class="tag-plugin checkbox" color="red" symbol="times"><input type="checkbox" checked="true"/><span>显示为乘号的红色的已勾选的复选框</span></div>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">checkbox</span> <span class="string">普通的没有勾选的复选框</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">checkbox</span> <span class="string">checked:true</span> <span class="string">普通的已勾选的复选框</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">checkbox</span> <span class="string">symbol:plus</span> <span class="string">color:green</span> <span class="string">checked:true</span> <span class="string">显示为加号的绿色的已勾选的复选框</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">checkbox</span> <span class="string">symbol:minus</span> <span class="string">color:yellow</span> <span class="string">checked:true</span> <span class="string">显示为减号的黄色的已勾选的复选框</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">checkbox</span> <span class="string">symbol:times</span> <span class="string">color:red</span> <span class="string">checked:true</span> <span class="string">显示为乘号的红色的已勾选的复选框</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="comment"># checked: true/false</span></span><br><span class="line"><span class="comment"># color: red/orange/yellow/green/cyan/blue/purple</span></span><br><span class="line"><span class="comment"># symbol: plus/minus/times</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="navbar-导航栏"><a href="#navbar-导航栏" class="headerlink" title="navbar 导航栏"></a>navbar 导航栏</h2><div class="tag-plugin navbar"><nav class="cap"><a class="active" href="/">文章</a><a href="/tags/">标签</a><a target="_blank" rel="noopener" href="https://github.com/jdkq/">GitHub</a></nav></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">navbar</span> <span class="string">active:1</span> [<span class="string">文章</span>]<span class="string">(/)</span> [<span class="string">标签</span>]<span class="string">(/tags/)</span>  [<span class="string">GitHub</span>]<span class="string">(https://github.com/jdkq/)</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="frame-设备框架"><a href="#frame-设备框架" class="headerlink" title="frame 设备框架"></a>frame 设备框架</h2><div class="tag-plugin video-wrap"><div class="frame-wrap" id="iphone11"focus="top"><video poster="https://img2.baidu.com/it/u=638285213,1746517464&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" playsinline="" muted="" loop="" autoplay="" preload="metadata"><source src="/assets/wiki/prohud/toast/demo-loading.mp4" type="video/mp4"></video><div class="frame"></div></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">frame</span> <span class="string">iphone11</span> <span class="string">img:/assets/wiki/prohud/toast/demo-loading.png</span> <span class="string">video:/assets/wiki/prohud/toast/demo-loading.mp4</span> <span class="string">focus:top</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文本修饰标签集"><a href="#文本修饰标签集" class="headerlink" title="文本修饰标签集"></a>文本修饰标签集</h2><ul>
+<li>这是 <psw>密码</psw> 标签</li>
+<li>这是 <u>下划线</u> 标签</li>
+<li>这是 <emp>着重号</emp> 标签</li>
+<li>这是 <wavy>波浪线</wavy> 标签</li>
+<li>这是 <del>删除线</del> 标签</li>
+<li>这是 <sup class="tag-plugin sup" color="red">上角标</sup> 标签</li>
+<li>这是 <sub class="tag-plugin sub" >下角标</sub> 标签</li>
+<li>这是 <kbd>键盘样式</kbd> 标签，试一试：<kbd>⌘</kbd> + <kbd>D</kbd><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">psw</span> <span class="string">密码</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">u</span> <span class="string">下划线</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">emp</span> <span class="string">着重号</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">wavy</span> <span class="string">波浪线</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">del</span> <span class="string">删除线</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">sup</span> <span class="string">上角标</span> <span class="string">color:red</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">sub</span> <span class="string">下角标</span> <span class="string">%</span>&#125; <span class="string">标签</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">这是</span> &#123;<span class="string">%</span> <span class="string">kbd</span> <span class="string">键盘样式</span> <span class="string">%</span>&#125; <span class="string">标签，试一试：&#123;%</span> <span class="string">kbd</span> <span class="string">⌘</span> <span class="string">%&#125;</span> <span class="string">+</span> &#123;<span class="string">%</span> <span class="string">kbd</span> <span class="string">D</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><p>2021 年 2 月 16 日</p></div><div class="body fs14"><p>主要部分功能已经开发的差不多了。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img1.baidu.com/it/u=676729016,138144393&fm=253&fmt=auto&app=138&f=PNG?w=889&h=500" fancybox="true" style="width:300px;"/></div></div></div></div><div class="timenode" index="1"><div class="header"><p>2021 年 2 月 11 日</p></div><div class="body fs14"><p>今天除夕，也是生日，一个人在外地过年+过生日，熬夜开发新主题，尽量在假期结束前放出公测版。</p></div></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">timeline</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">node</span> <span class="number">2021</span> <span class="string">年</span> <span class="number">2</span> <span class="string">月</span> <span class="number">16</span> <span class="string">日</span> <span class="string">--&gt;</span></span><br><span class="line"><span class="string">主要部分功能已经开发的差不多了。</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://img1.baidu.com/it/u=676729016</span>,<span class="number">138144393</span><span class="string">&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=889&amp;h=500</span> <span class="string">width:300px</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">node</span> <span class="number">2021</span> <span class="string">年</span> <span class="number">2</span> <span class="string">月</span> <span class="number">11</span> <span class="string">日</span> <span class="string">--&gt;</span></span><br><span class="line"><span class="string">今天除夕，也是生日，一个人在外地过年+过生日，熬夜开发新主题，尽量在假期结束前放出公测版。</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endtimeline</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ghcard-卡片"><a href="#ghcard-卡片" class="headerlink" title="ghcard 卡片"></a>ghcard 卡片</h2><div class="tag-plugin ghcard"><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/Marcus"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://github-readme-stats.xaoxuu.com/api/?username=Marcus&&show_owner=true"/></a></div>
+<div class="tag-plugin ghcard"><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/jdkq/Web"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://github-readme-stats.xaoxuu.com/api/pin/?username=jdkq&repo=Web&theme=dark&show_owner=true"/></a></div>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">ghcard</span> <span class="string">Marcus</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">ghcard</span> <span class="string">jdkq/Web</span> <span class="string">theme:dark</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ablock-普通块容器"><a href="#ablock-普通块容器" class="headerlink" title="ablock 普通块容器"></a>ablock 普通块容器</h2><p>note 标签就是使用 ablock 容器实现的，它们样式是相同的：</p>
+<div class="tag-plugin note" color="warning"><div class="title"><strong>Stellar v1.12.0</strong></div><div class="body"><p>因为原 noteblock 标签在升级到 hexo 6.0 之后跟官方库冲突了，官方一直没有解释原因，后不得不改名：<br>noteblock -&gt; grid -&gt; border<br>详情见：<a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/issues/712">#172</a></p></div></div>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &#123;% ablock [title] [color:color] [child:codeblock/tabs] %&#125;</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="comment"># &#123;% endablock %&#125;</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">ablock</span> <span class="string">Stellar</span> <span class="string">v1.12.0</span> <span class="string">color:warning</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">因为原</span> <span class="string">noteblock</span> <span class="string">标签在升级到</span> <span class="string">hexo</span> <span class="number">6.0</span> <span class="string">之后跟官方库冲突了，官方一直没有解释原因，后不得不改名：</span></span><br><span class="line"><span class="string">noteblock</span> <span class="string">-&gt;</span> <span class="string">grid</span> <span class="string">-&gt;</span> <span class="string">border</span></span><br><span class="line"><span class="string">详情见：[#172](https://github.com/volantis-x/hexo-theme-volantis/issues/712)</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endablock</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="folding-折叠容器"><a href="#folding-折叠容器" class="headerlink" title="folding 折叠容器"></a>folding 折叠容器</h2><details class="tag-plugin folding" color="light"><summary><span>这里有个猪头</span></summary><div class="body"><p>你居然信了！<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png"/></span></p></div></details>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% folding 这里有个猪头  open:false color:light %&#125;</span><br><span class="line">你居然信了！&#123;% emoji blobcat ablobcatattentionreverse %&#125;</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="tabs-分栏容器-拆NEXT的效果"><a href="#tabs-分栏容器-拆NEXT的效果" class="headerlink" title="tabs 分栏容器 (拆NEXT的效果)"></a>tabs 分栏容器 (拆NEXT的效果)</h2><div class="tag-plugin tabs" align="center"id="tab_5"><div class="nav-tabs"><div class="tab"><a href="#tab_5-1">图片</a></div><div class="tab active"><a href="#tab_5-2">代码块</a></div><div class="tab"><a href="#tab_5-3">表格</a></div></div><div class="tab-content"><div class="tab-pane" id="tab_5-1"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img1.baidu.com/it/u=676729016,138144393&fm=253&fmt=auto&app=138&f=PNG?w=889&h=500" fancybox="true" style="width:300px;"/></div></div></div><div class="tab-pane active" id="tab_5-2"><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x <span class="operator">=</span> <span class="number">123</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="tab_5-3"><table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a1</td>
+<td>b1</td>
+<td>c1</td>
+</tr>
+<tr>
+<td>a2</td>
+<td>b2</td>
+<td>c2</td>
+</tr>
+</tbody></table></div></div></div>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs active:2 align:center %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 图片 --&gt;</span><br><span class="line">&#123;% image https://img1.baidu.com/it/u=676729016,138144393&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=889&amp;h=500 width:300px %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 代码块 --&gt;</span><br><span class="line">```swift</span><br><span class="line">let x = 123</span><br><span class="line">print(&quot;hello world&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- tab 表格 --&gt;</span><br><span class="line">| a | b | c |</span><br><span class="line">| --- | --- | --- |</span><br><span class="line">| a1 | b1 | c1 |</span><br><span class="line">| a2 | b2 | c2 |</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="swiper-轮播容器"><a href="#swiper-轮播容器" class="headerlink" title="swiper 轮播容器"></a>swiper 轮播容器</h3><div class="tag-plugin gallery swiper" id="swiper-api" effect="cards"><div class="swiper-wrapper"><div class="swiper-slide"><img no-lazy src="https://images.unsplash.com/photo-1625171515821-1870deb2743b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" fancybox="true"/ onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://images.unsplash.com/photo-1528283648649-33347faa5d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" fancybox="true"/ onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" fancybox="true"/ onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://images.unsplash.com/photo-1524797905120-92940d3a18d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" fancybox="true"/ onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">swiper</span> <span class="string">effect:cards</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://images.unsplash.com/photo-1625171515821-1870deb2743b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80</span>  <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://images.unsplash.com/photo-1528283648649-33347faa5d9e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80</span>  <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80</span>  <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">image</span> <span class="string">https://images.unsplash.com/photo-1524797905120-92940d3a18d6?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80</span>  <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endswiper</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/4a17b156.html">Hello World</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/9c508b41.html">JQuery链式编程</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div id="example-3">
+			  <button @click="flag = !flag">
+			    toggle
+			  </button>
+			  <transition
+			    name="custom-classes-transition"
+			    enter-active-class="animated rubberBand"
+			    leave-active-class="animated bounceOutRight"
+			  >
+			    <p v-if="flag">Animate.css</p>
+			  </transition>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#example-3',
+				data:{
+					flag: false
+				},
+				methods:{},
+			})
+		</script>
+	</body>
+</html>

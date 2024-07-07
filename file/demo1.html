@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p><b>过滤前：</b>{{msg}}</p>
+		<p><b>过滤后：</b>{{ msg | msgFormat1 }}</p>
+		<p><b>传参过滤后：</b>{{ msg | msgFormat2('疯狂、','帅气无比、','风流倜傥') }}</p>
+		<p><b>过滤器可以多次调用：</b>{{ msg | msgFormat1 | test }}</p>
+	</div>
+	<script type="text/javascript">
+
+		//定义一个vue全局过滤器
+		// msg: 拿到msg数据 arg:传递的数据
+		Vue.filter('msgFormat1',function(msg){
+			// 正常改变只变一个，所以replace前加正则
+			return msg.replace(/单纯/g,'狂妄')
+		})
+
+		Vue.filter('msgFormat2',function(msg,arg,arg2,arg3){
+			return msg.replace(/单纯/g,arg+arg2+arg3)
+		})
+
+		Vue.filter('test',function(msg){
+			return msg + '++++++++++++++++++++++++++'
+		})
+
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				msg:'曾经，我也是一个单纯的少年，单纯的我，傻傻的问，谁是世界上最单纯的人'
+			},
+			methods:{}
+		})
+	</script>
+</body>
+</html>

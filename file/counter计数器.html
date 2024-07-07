@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<counter></counter>
+			<counter></counter>
+			<counter></counter>
+		</div>
+		<template id="tmp_count">
+			<div>
+				<input type="button" name="" value="+1" @click="increament">
+				<h3>{{count}}</h3>
+			</div>
+		</template>
+		<script type="text/javascript">
+		// 注册一个计数器组件counter，每当点击data值里的count+1
+			Vue.component('counter',{
+				template: '#tmp_count',
+				data: function(){
+					return{
+						count:0
+					}
+				},
+				methods:{
+					increament:function(){
+						this.count++	
+					}
+				}
+			})
+			var vm = new Vue({
+				el:'#app',
+				data:{
+
+				},
+				methods:{},
+			})
+		</script>
+	</body>
+</html>
