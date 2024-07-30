@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 6.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,23 +17,25 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>分类 - Marcus</title>
+  <title>Vue-resourse 实现get,post,jsonp请求 - Marcus</title>
 
   
-    <meta name="description" content="Keep Real">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://bba1.site/categories/index.html">
+    <meta name="description" content="Vue-resourse CDN引用地址：https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue-resource@1.5.1   get请求地址：http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users post请求地址：http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users jsonp请求地址：http:&#x2F;&#x2F;jsonplaceho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-resourse 实现get,post,jsonp请求">
+<meta property="og:url" content="https://bba1.site/posts/6b3a2798.html">
 <meta property="og:site_name" content="Marcus">
-<meta property="og:description" content="Keep Real">
+<meta property="og:description" content="Vue-resourse CDN引用地址：https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue-resource@1.5.1   get请求地址：http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users post请求地址：http:&#x2F;&#x2F;jsonplaceholder.typicode.com&#x2F;users jsonp请求地址：http:&#x2F;&#x2F;jsonplaceho">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-28T06:17:46.000Z">
+<meta property="article:modified_time" content="2024-07-07T14:44:23.713Z">
 <meta property="article:author" content="Marcus">
-<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Vue-resourse">
 <meta name="twitter:card" content="summary">
   
   
   
-  <meta name="keywords" content="博客">
+  <meta name="keywords" content="Vue-resourse">
 
   <!-- feed -->
   
@@ -50,7 +52,7 @@
 </head>
 <body><div class="sitebg"><div class="siteblur"></div></div>
 
-<div class="l_body s:aa index story" id="start" layout="categories" text-indent><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content story" id="start" layout="post" text-indent><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://xaoxuu.com//assets/wiki/stellar/icon.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Marcus</div><div class="sub cap">bba1.site吉他谱大全</div></a></div></header>
@@ -62,74 +64,68 @@
 <nav class="menu dis-select"></nav>
 </div>
 <div class="widgets">
-<widget class="widget-wrapper slide-up markdown"><div class="widget-header dis-select"><span class="name">📞 联系我：</span></div><div class="widget-body fs14"><p>微信：marcus11240</p>
+<widget class="widget-wrapper slide-up markdown"><div class="widget-header dis-select"><span class="name">📆 吉他谱大纲：</span></div><div class="widget-body fs14"><p>《指纹》、《如果可以》、《若月亮没来》、《无名的人》、《在加纳共和国离婚》</p>
 </div></widget>
 
-<widget class="widget-wrapper slide-up post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/posts/b5cf5e6d.html"><span class="title">git建立SSH信任</span></a><a class="item title" href="/posts/e874c650.html"><span class="title">配置Vue-element-admin安装node-sass入坑</span></a><a class="item title" href="/posts/884d0c65.html"><span class="title">解决多个github上传密钥识别问题</span></a></div></widget>
+
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://xaoxuu.com//assets/wiki/stellar/icon.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Marcus</div><div class="sub cap">bba1.site吉他谱大全</div></a></div></header>
 
 
-  
-  
-  
 
-<div class="navbar top"><nav class="post"><a href="/">近期发布</a><a class="active" href="/categories">分类</a><a href="/tags">标签</a><a href="/archives">归档</a></nav></div>
-  <div class='post-list'>
-    <article class='slide-up' id='cats'>
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Vue2-0/">Vue2.0</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2020-05-28T06:17:46.000Z">2020-05-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-07-07T14:44:23.713Z">2024-07-07</time></span></div></div></div>
+    
+    <div class="bottom only-title">
       
-        <div>
-          <a class="cat" href="/categories/Bug%E8%A7%A3%E5%86%B3/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>Bug解决</span>
-            <span class='badge'>(3)</span>
-          </a>
-        </div>
-      
-        <div>
-          <a class="cat" href="/categories/Git/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>Git</span>
-            <span class='badge'>(2)</span>
-          </a>
-        </div>
-      
-        <div>
-          <a class="cat" href="/categories/Markdown/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>Markdown</span>
-            <span class='badge'>(1)</span>
-          </a>
-        </div>
-      
-        <div>
-          <a class="cat" href="/categories/NPM/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>NPM</span>
-            <span class='badge'>(1)</span>
-          </a>
-        </div>
-      
-        <div>
-          <a class="cat" href="/categories/Vue2-0/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>Vue2.0</span>
-            <span class='badge'>(6)</span>
-          </a>
-        </div>
-      
-        <div>
-          <a class="cat" href="/categories/%E5%89%8D%E7%AB%AF/">
-            <span class='name'><svg style="margin-bottom:1px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14z" opacity=".5"/><path fill="currentColor" d="M20 6.238c0-.298-.005-.475-.025-.63a3 3 0 0 0-2.583-2.582C17.197 3 16.965 3 16.5 3H9.988c.116.104.247.234.462.45L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .849.352C14.098 6 14.675 6 15.829 6h.373c1.78 0 2.957 0 3.798.238"/><path fill="currentColor" fill-rule="evenodd" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>前端</span>
-            <span class='badge'>(6)</span>
-          </a>
-        </div>
-      
-    </article>
+      <div class="text-area">
+        <h1 class="text title"><span>Vue-resourse 实现get,post,jsonp请求</span></h1>
+        
+      </div>
+    </div>
+    
   </div>
+  </div><article class="md-text content slide-up"><h2 id="Vue-resourse"><a href="#Vue-resourse" class="headerlink" title="Vue-resourse"></a>Vue-resourse</h2><blockquote>
+<p>CDN引用地址：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1">https://cdn.jsdelivr.net/npm/vue-resource@1.5.1</a></p>
+</blockquote>
+<ul>
+<li>get请求地址：<a target="_blank" rel="noopener" href="http://jsonplaceholder.typicode.com/users">http://jsonplaceholder.typicode.com/users</a></li>
+<li>post请求地址：<a target="_blank" rel="noopener" href="http://jsonplaceholder.typicode.com/users">http://jsonplaceholder.typicode.com/users</a></li>
+<li>jsonp请求地址：<a target="_blank" rel="noopener" href="http://jsonplaceholder.typicode.com/users">http://jsonplaceholder.typicode.com/users</a></li>
+</ul>
+<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;get请求&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;getInfo&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;post请求&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;postInfo&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jsonp请求&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;jsonpInfo&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/2.2.2/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- vue-resource依赖于vue --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- this.$http.get / post /jsonp --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue-resource@1.5.1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="attr">el</span>:<span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">		<span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		&#125;,</span></span><br><span class="line"><span class="language-javascript">		<span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">getInfo</span>:<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">// 当发起get请求之后通过 .then设置成功的回调函数</span></span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">this</span>.<span class="property">$http</span>.<span class="title function_">get</span>(<span class="string">&#x27;http://jsonplaceholder.typicode.com/users&#x27;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="comment">// sucess callback</span></span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">body</span>)</span></span><br><span class="line"><span class="language-javascript">				&#125;,<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="comment">//error callback</span></span></span><br><span class="line"><span class="language-javascript">				&#125;)</span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">postInfo</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">this</span>.<span class="property">$http</span>.<span class="title function_">post</span>(<span class="string">&#x27;http://jsonplaceholder.typicode.com/users&#x27;</span>,&#123;&#125;,&#123; emulateJSON : <span class="literal">true</span> &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">body</span>)</span></span><br><span class="line"><span class="language-javascript">				&#125;)</span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">jsonpInfo</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">// 发起jsonp请求</span></span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">this</span>.<span class="property">$http</span>.<span class="title function_">jsonp</span>(<span class="string">&#x27;http://jsonplaceholder.typicode.com/users&#x27;</span>).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">result</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">body</span>)</span></span><br><span class="line"><span class="language-javascript">				&#125;)</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		&#125;,</span></span><br><span class="line"><span class="language-javascript">	&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="演示："><a href="#演示：" class="headerlink" title="演示："></a>演示：</h2><p><a href="/file/vue-resource.html">点击演示</a></p>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">http</span>.<span class="title function_">get</span>(<span class="string">&#x27;/someUrl&#x27;</span>, [config]).<span class="title function_">then</span>(successCallback, errorCallback);</span><br></pre></td></tr></table></figure>
+<h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$http</span>.<span class="title function_">post</span>(<span class="string">&#x27;/someUrl&#x27;</span>, [body], [config]).<span class="title function_">then</span>(successCallback, errorCallback);</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>发起post请求格式：<em>application&#x2F;x-wwww-form,-urlencodeed</em><br>手动发起的post请求，默认没有表单格式，有的服务器处理不了<br>这里需要添加<code>config</code> 属性 <code>emulateHTTP</code></p>
+<p>详见：<a target="_blank" rel="noopener" href="https://github.com/pagekit/vue-resource/blob/develop/docs/http.md">https://github.com/pagekit/vue-resource/blob/develop/docs/http.md</a></p>
+<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">jsonp</span>(<span class="string">&#x27;url&#x27;</span>, [config]).<span class="title function_">then</span>(successCallback, errorCallback);</span><br></pre></td></tr></table></figure>
+
+</article>
+<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/ed597b90.html">Vue品牌列表</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/83f13096.html">Vue生命周期</a></div></section></div>
+
+
+
+
 
 
 <footer class="page-footer slide-up footnote"><hr><div class="text"></div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-resourse"><span class="toc-text">Vue-resourse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA"><span class="toc-text">代码展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%EF%BC%9A"><span class="toc-text">演示：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-text">get</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post"><span class="toc-text">post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsonp"><span class="toc-text">jsonp</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
