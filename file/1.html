@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d相册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: black;
+            perspective: 1000px;
+            /* 视距要给父元素设置 */
+        }
+        .album {
+            position: relative;
+            width: 320px;
+            height: 460px;
+            margin: 150px auto;           
+            transform-style: preserve-3d;
+            animation: rotates 20s linear infinite;
+            /* transform: rotateX(-15deg); */
+        }
+        @keyframes rotates {
+            from {
+                transform: rotateX(-15deg) rotateY(0)   ;
+            }
+            to {
+                transform: rotateX(-15deg) rotateY(360deg)  ;
+            }
+        }
+        .album img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+      
+        .album  img:nth-child(1) {
+            transform: rotateY(0deg)  translateZ(300px);
+        }
+        .album  img:nth-child(2) {
+            transform: rotateY(60deg)  translateZ(300px);
+        }
+        .album  img:nth-child(3) {
+            transform: rotateY(120deg)  translateZ(300px);
+        }
+        .album  img:nth-child(4) {
+            transform: rotateY(180deg)  translateZ(300px);
+        }
+        .album  img:nth-child(5) {
+            transform: rotateY(240deg)  translateZ(300px);
+        }
+        .album  img:nth-child(6) {
+            transform: rotateY(300deg)  translateZ(300px);
+        }
+        /* .album  img:nth-child(7) {
+            transform: rotateY(0deg)  translateZ(0px);
+        } */
+        .album:hover {
+            animation-play-state: paused;
+        }
+        /* 反向旋转抵消 */
+        .album .mid {
+            /* reverse为关键字不能使用来做动画名，否则不生效 */
+           animation: reverses 20s linear infinite;
+        }
+        @keyframes reverses {
+            from {
+                transform: rotateY(360deg);
+            }
+            to {
+                transform: rotateY(0);
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="album">       
+        <img src="http://cdnjson.com/images/2024/10/16/5.jpg" alt="">
+        <img src="http://cdnjson.com/images/2024/10/16/2.jpg" alt="">
+        <img src="http://cdnjson.com/images/2024/10/16/1.jpg" alt="">
+        <img src="http://cdnjson.com/images/2024/10/16/6913e28c69e33f331.jpg" alt="">
+        <img src="http://cdnjson.com/images/2024/10/16/7.jpg" alt="">
+        <img src="http://cdnjson.com/images/2024/10/16/8.jpg" alt="">    
+    </div>
+</body>
+</html>
