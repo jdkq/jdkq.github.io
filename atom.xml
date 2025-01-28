@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Marcus</title>
   
-  <subtitle>bba1.site吉他谱大全</subtitle>
-  <link href="https://bba1.site/atom.xml" rel="self"/>
+  <subtitle>jdkq.github.io 代码库</subtitle>
+  <link href="https://jdkq.github.io/atom.xml" rel="self"/>
   
-  <link href="https://bba1.site/"/>
+  <link href="https://jdkq.github.io/"/>
   <updated>2024-07-07T14:35:51.004Z</updated>
-  <id>https://bba1.site/</id>
+  <id>https://jdkq.github.io/</id>
   
   <author>
     <name>Marcus</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>JQuery链式编程</title>
-    <link href="https://bba1.site/posts/9c508b41.html"/>
-    <id>https://bba1.site/posts/9c508b41.html</id>
+    <link href="https://jdkq.github.io/posts/9c508b41.html"/>
+    <id>https://jdkq.github.io/posts/9c508b41.html</id>
     <published>2020-09-18T03:38:24.000Z</published>
     <updated>2024-07-07T14:35:51.004Z</updated>
     
@@ -36,17 +36,17 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Jquery" scheme="https://bba1.site/tags/Jquery/"/>
+    <category term="Jquery" scheme="https://jdkq.github.io/tags/Jquery/"/>
     
   </entry>
   
   <entry>
     <title>ElementUI+Vue的配套使用</title>
-    <link href="https://bba1.site/posts/67ef95a.html"/>
-    <id>https://bba1.site/posts/67ef95a.html</id>
+    <link href="https://jdkq.github.io/posts/67ef95a.html"/>
+    <id>https://jdkq.github.io/posts/67ef95a.html</id>
     <published>2020-09-06T15:52:00.000Z</published>
     <updated>2024-07-07T14:36:12.994Z</updated>
     
@@ -63,19 +63,19 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Vue" scheme="https://bba1.site/tags/Vue/"/>
+    <category term="Vue" scheme="https://jdkq.github.io/tags/Vue/"/>
     
-    <category term="ElementUI" scheme="https://bba1.site/tags/ElementUI/"/>
+    <category term="ElementUI" scheme="https://jdkq.github.io/tags/ElementUI/"/>
     
   </entry>
   
   <entry>
     <title>解决多个github上传密钥识别问题</title>
-    <link href="https://bba1.site/posts/884d0c65.html"/>
-    <id>https://bba1.site/posts/884d0c65.html</id>
+    <link href="https://jdkq.github.io/posts/884d0c65.html"/>
+    <id>https://jdkq.github.io/posts/884d0c65.html</id>
     <published>2020-08-31T12:28:29.000Z</published>
     <updated>2024-07-07T14:45:10.959Z</updated>
     
@@ -89,17 +89,17 @@
     
     
     
-    <category term="Bug解决" scheme="https://bba1.site/categories/Bug%E8%A7%A3%E5%86%B3/"/>
+    <category term="Bug解决" scheme="https://jdkq.github.io/categories/Bug%E8%A7%A3%E5%86%B3/"/>
     
     
-    <category term="Github本地多包上传" scheme="https://bba1.site/tags/Github%E6%9C%AC%E5%9C%B0%E5%A4%9A%E5%8C%85%E4%B8%8A%E4%BC%A0/"/>
+    <category term="Github本地多包上传" scheme="https://jdkq.github.io/tags/Github%E6%9C%AC%E5%9C%B0%E5%A4%9A%E5%8C%85%E4%B8%8A%E4%BC%A0/"/>
     
   </entry>
   
   <entry>
     <title>Vue小项目Excel解析为Word</title>
-    <link href="https://bba1.site/posts/a0114c0d.html"/>
-    <id>https://bba1.site/posts/a0114c0d.html</id>
+    <link href="https://jdkq.github.io/posts/a0114c0d.html"/>
+    <id>https://jdkq.github.io/posts/a0114c0d.html</id>
     <published>2020-06-22T02:44:58.000Z</published>
     <updated>2024-07-07T14:44:33.137Z</updated>
     
@@ -115,17 +115,17 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Vue对表格解析项目打印" scheme="https://bba1.site/tags/Vue%E5%AF%B9%E8%A1%A8%E6%A0%BC%E8%A7%A3%E6%9E%90%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8D%B0/"/>
+    <category term="Vue对表格解析项目打印" scheme="https://jdkq.github.io/tags/Vue%E5%AF%B9%E8%A1%A8%E6%A0%BC%E8%A7%A3%E6%9E%90%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8D%B0/"/>
     
   </entry>
   
   <entry>
     <title>Vue路由</title>
-    <link href="https://bba1.site/posts/92619e7d.html"/>
-    <id>https://bba1.site/posts/92619e7d.html</id>
+    <link href="https://jdkq.github.io/posts/92619e7d.html"/>
+    <id>https://jdkq.github.io/posts/92619e7d.html</id>
     <published>2020-06-13T08:22:27.000Z</published>
     <updated>2024-07-07T14:44:51.971Z</updated>
     
@@ -140,17 +140,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue路由" scheme="https://bba1.site/tags/Vue%E8%B7%AF%E7%94%B1/"/>
+    <category term="Vue路由" scheme="https://jdkq.github.io/tags/Vue%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
   <entry>
     <title>vue组件</title>
-    <link href="https://bba1.site/posts/dd3b78a2.html"/>
-    <id>https://bba1.site/posts/dd3b78a2.html</id>
+    <link href="https://jdkq.github.io/posts/dd3b78a2.html"/>
+    <id>https://jdkq.github.io/posts/dd3b78a2.html</id>
     <published>2020-06-01T07:51:02.000Z</published>
     <updated>2024-07-07T14:44:45.859Z</updated>
     
@@ -165,17 +165,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue组件" scheme="https://bba1.site/tags/Vue%E7%BB%84%E4%BB%B6/"/>
+    <category term="Vue组件" scheme="https://jdkq.github.io/tags/Vue%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>vue动画</title>
-    <link href="https://bba1.site/posts/88bda290.html"/>
-    <id>https://bba1.site/posts/88bda290.html</id>
+    <link href="https://jdkq.github.io/posts/88bda290.html"/>
+    <id>https://jdkq.github.io/posts/88bda290.html</id>
     <published>2020-05-31T07:13:20.000Z</published>
     <updated>2024-07-07T14:44:28.246Z</updated>
     
@@ -190,17 +190,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue动画" scheme="https://bba1.site/tags/Vue%E5%8A%A8%E7%94%BB/"/>
+    <category term="Vue动画" scheme="https://jdkq.github.io/tags/Vue%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
   <entry>
     <title>Vue品牌列表</title>
-    <link href="https://bba1.site/posts/ed597b90.html"/>
-    <id>https://bba1.site/posts/ed597b90.html</id>
+    <link href="https://jdkq.github.io/posts/ed597b90.html"/>
+    <id>https://jdkq.github.io/posts/ed597b90.html</id>
     <published>2020-05-29T11:10:51.000Z</published>
     <updated>2024-07-07T14:44:57.348Z</updated>
     
@@ -216,17 +216,17 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Vue基于Table表单增、删、查项目" scheme="https://bba1.site/tags/Vue%E5%9F%BA%E4%BA%8ETable%E8%A1%A8%E5%8D%95%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%9F%A5%E9%A1%B9%E7%9B%AE/"/>
+    <category term="Vue基于Table表单增、删、查项目" scheme="https://jdkq.github.io/tags/Vue%E5%9F%BA%E4%BA%8ETable%E8%A1%A8%E5%8D%95%E5%A2%9E%E3%80%81%E5%88%A0%E3%80%81%E6%9F%A5%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title>Vue-resourse 实现get,post,jsonp请求</title>
-    <link href="https://bba1.site/posts/6b3a2798.html"/>
-    <id>https://bba1.site/posts/6b3a2798.html</id>
+    <link href="https://jdkq.github.io/posts/6b3a2798.html"/>
+    <id>https://jdkq.github.io/posts/6b3a2798.html</id>
     <published>2020-05-28T06:17:46.000Z</published>
     <updated>2024-07-07T14:44:23.713Z</updated>
     
@@ -241,17 +241,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue-resourse" scheme="https://bba1.site/tags/Vue-resourse/"/>
+    <category term="Vue-resourse" scheme="https://jdkq.github.io/tags/Vue-resourse/"/>
     
   </entry>
   
   <entry>
     <title>Vue生命周期</title>
-    <link href="https://bba1.site/posts/83f13096.html"/>
-    <id>https://bba1.site/posts/83f13096.html</id>
+    <link href="https://jdkq.github.io/posts/83f13096.html"/>
+    <id>https://jdkq.github.io/posts/83f13096.html</id>
     <published>2020-05-27T07:31:24.000Z</published>
     <updated>2024-07-07T14:44:41.576Z</updated>
     
@@ -265,17 +265,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue生命周期" scheme="https://bba1.site/tags/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <category term="Vue生命周期" scheme="https://jdkq.github.io/tags/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
   </entry>
   
   <entry>
     <title>Vue指令</title>
-    <link href="https://bba1.site/posts/669b9394.html"/>
-    <id>https://bba1.site/posts/669b9394.html</id>
+    <link href="https://jdkq.github.io/posts/669b9394.html"/>
+    <id>https://jdkq.github.io/posts/669b9394.html</id>
     <published>2020-04-24T05:12:33.000Z</published>
     <updated>2024-07-07T14:44:37.279Z</updated>
     
@@ -289,17 +289,17 @@
     
     
     
-    <category term="Vue2.0" scheme="https://bba1.site/categories/Vue2-0/"/>
+    <category term="Vue2.0" scheme="https://jdkq.github.io/categories/Vue2-0/"/>
     
     
-    <category term="Vue指令" scheme="https://bba1.site/tags/Vue%E6%8C%87%E4%BB%A4/"/>
+    <category term="Vue指令" scheme="https://jdkq.github.io/tags/Vue%E6%8C%87%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>MVC跟MVVM</title>
-    <link href="https://bba1.site/posts/af8177f5.html"/>
-    <id>https://bba1.site/posts/af8177f5.html</id>
+    <link href="https://jdkq.github.io/posts/af8177f5.html"/>
+    <id>https://jdkq.github.io/posts/af8177f5.html</id>
     <published>2020-04-24T04:21:18.000Z</published>
     <updated>2024-07-07T14:36:04.149Z</updated>
     
@@ -313,17 +313,17 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="MVC和MVVM" scheme="https://bba1.site/tags/MVC%E5%92%8CMVVM/"/>
+    <category term="MVC和MVVM" scheme="https://jdkq.github.io/tags/MVC%E5%92%8CMVVM/"/>
     
   </entry>
   
   <entry>
     <title>前端流行框架</title>
-    <link href="https://bba1.site/posts/ebf42551%E3%80%81.html"/>
-    <id>https://bba1.site/posts/ebf42551%E3%80%81.html</id>
+    <link href="https://jdkq.github.io/posts/ebf42551%E3%80%81.html"/>
+    <id>https://jdkq.github.io/posts/ebf42551%E3%80%81.html</id>
     <published>2020-04-24T04:06:38.000Z</published>
     <updated>2024-07-07T14:45:01.395Z</updated>
     
@@ -337,17 +337,17 @@
     
     
     
-    <category term="前端" scheme="https://bba1.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://jdkq.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Web流行框架" scheme="https://bba1.site/tags/Web%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6/"/>
+    <category term="Web流行框架" scheme="https://jdkq.github.io/tags/Web%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>安装Vue-cli脚手架</title>
-    <link href="https://bba1.site/posts/e52449ab.html"/>
-    <id>https://bba1.site/posts/e52449ab.html</id>
+    <link href="https://jdkq.github.io/posts/e52449ab.html"/>
+    <id>https://jdkq.github.io/posts/e52449ab.html</id>
     <published>2020-04-20T06:08:38.000Z</published>
     <updated>2024-07-07T14:45:06.568Z</updated>
     
@@ -367,17 +367,17 @@
     
     
     
-    <category term="Bug解决" scheme="https://bba1.site/categories/Bug%E8%A7%A3%E5%86%B3/"/>
+    <category term="Bug解决" scheme="https://jdkq.github.io/categories/Bug%E8%A7%A3%E5%86%B3/"/>
     
     
-    <category term="Vue-cli" scheme="https://bba1.site/tags/Vue-cli/"/>
+    <category term="Vue-cli" scheme="https://jdkq.github.io/tags/Vue-cli/"/>
     
   </entry>
   
   <entry>
     <title>配置Vue-element-admin安装node-sass入坑</title>
-    <link href="https://bba1.site/posts/e874c650.html"/>
-    <id>https://bba1.site/posts/e874c650.html</id>
+    <link href="https://jdkq.github.io/posts/e874c650.html"/>
+    <id>https://jdkq.github.io/posts/e874c650.html</id>
     <published>2020-04-12T14:35:37.000Z</published>
     <updated>2024-07-07T14:45:15.820Z</updated>
     
@@ -392,17 +392,17 @@
     
     
     
-    <category term="Bug解决" scheme="https://bba1.site/categories/Bug%E8%A7%A3%E5%86%B3/"/>
+    <category term="Bug解决" scheme="https://jdkq.github.io/categories/Bug%E8%A7%A3%E5%86%B3/"/>
     
     
-    <category term="Vue-element-admin" scheme="https://bba1.site/tags/Vue-element-admin/"/>
+    <category term="Vue-element-admin" scheme="https://jdkq.github.io/tags/Vue-element-admin/"/>
     
   </entry>
   
   <entry>
     <title>git建立SSH信任</title>
-    <link href="https://bba1.site/posts/b5cf5e6d.html"/>
-    <id>https://bba1.site/posts/b5cf5e6d.html</id>
+    <link href="https://jdkq.github.io/posts/b5cf5e6d.html"/>
+    <id>https://jdkq.github.io/posts/b5cf5e6d.html</id>
     <published>2020-03-23T10:46:42.000Z</published>
     <updated>2024-07-08T09:15:18.573Z</updated>
     
@@ -416,17 +416,17 @@
     
     
     
-    <category term="Git" scheme="https://bba1.site/categories/Git/"/>
+    <category term="Git" scheme="https://jdkq.github.io/categories/Git/"/>
     
     
-    <category term="SSH" scheme="https://bba1.site/tags/SSH/"/>
+    <category term="SSH" scheme="https://jdkq.github.io/tags/SSH/"/>
     
   </entry>
   
   <entry>
     <title>npm安装、更新与卸载</title>
-    <link href="https://bba1.site/posts/aa8b35df.html"/>
-    <id>https://bba1.site/posts/aa8b35df.html</id>
+    <link href="https://jdkq.github.io/posts/aa8b35df.html"/>
+    <id>https://jdkq.github.io/posts/aa8b35df.html</id>
     <published>2020-03-16T06:48:01.000Z</published>
     <updated>2024-07-07T14:36:08.352Z</updated>
     
@@ -513,19 +513,19 @@
     
     
     
-    <category term="NPM" scheme="https://bba1.site/categories/NPM/"/>
+    <category term="NPM" scheme="https://jdkq.github.io/categories/NPM/"/>
     
     
-    <category term="npm" scheme="https://bba1.site/tags/npm/"/>
+    <category term="npm" scheme="https://jdkq.github.io/tags/npm/"/>
     
-    <category term="nodejs" scheme="https://bba1.site/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://jdkq.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Markdown指南</title>
-    <link href="https://bba1.site/posts/e2396fcb.html"/>
-    <id>https://bba1.site/posts/e2396fcb.html</id>
+    <link href="https://jdkq.github.io/posts/e2396fcb.html"/>
+    <id>https://jdkq.github.io/posts/e2396fcb.html</id>
     <published>2020-03-12T03:45:00.000Z</published>
     <updated>2024-07-07T14:35:56.880Z</updated>
     
@@ -539,17 +539,17 @@
     
     
     
-    <category term="Markdown" scheme="https://bba1.site/categories/Markdown/"/>
+    <category term="Markdown" scheme="https://jdkq.github.io/categories/Markdown/"/>
     
     
-    <category term="Markdown语法" scheme="https://bba1.site/tags/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <category term="Markdown语法" scheme="https://jdkq.github.io/tags/Markdown%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>git提交文件篇</title>
-    <link href="https://bba1.site/posts/870bc40.html"/>
-    <id>https://bba1.site/posts/870bc40.html</id>
+    <link href="https://jdkq.github.io/posts/870bc40.html"/>
+    <id>https://jdkq.github.io/posts/870bc40.html</id>
     <published>2020-03-12T03:17:36.000Z</published>
     <updated>2024-07-07T14:44:13.523Z</updated>
     
@@ -563,12 +563,12 @@
     
     
     
-    <category term="Git" scheme="https://bba1.site/categories/Git/"/>
+    <category term="Git" scheme="https://jdkq.github.io/categories/Git/"/>
     
     
-    <category term="git" scheme="https://bba1.site/tags/git/"/>
+    <category term="git" scheme="https://jdkq.github.io/tags/git/"/>
     
-    <category term="gitbash" scheme="https://bba1.site/tags/gitbash/"/>
+    <category term="gitbash" scheme="https://jdkq.github.io/tags/gitbash/"/>
     
   </entry>
   
